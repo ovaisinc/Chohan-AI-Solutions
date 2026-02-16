@@ -8,6 +8,8 @@ import Home from "@/pages/home";
 import InsightsPage from "@/pages/insights";
 import InsightDetailPage from "@/pages/insight-detail";
 import ContactPage from "@/pages/contact";
+import BlogPage from "@/pages/blog";
+import BlogPostPage from "@/pages/blog-post";
 
 function Router() {
   return (
@@ -15,6 +17,8 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/insights" component={InsightsPage} />
       <Route path="/insights/:slug" component={InsightDetailPage} />
+      <Route path="/blog" component={BlogPage} />
+      <Route path="/blog/:slug" component={BlogPostPage} />
       <Route path="/contact" component={ContactPage} />
       <Route component={NotFound} />
     </Switch>

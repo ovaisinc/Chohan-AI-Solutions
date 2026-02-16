@@ -66,6 +66,11 @@ export default function CaseStudiesPage() {
                 Case Studies
               </span>
             </Link>
+            <Link href="/blog">
+              <span className="text-sm font-medium hover:text-primary transition-colors" data-testid="link-insights-nav-blog">
+                Blog
+              </span>
+            </Link>
             <Link href="/contact">
               <Button
                 className="bg-white text-black hover:bg-gray-200 rounded-full px-6"
@@ -112,6 +117,11 @@ export default function CaseStudiesPage() {
                   <Link href="/insights">
                     <span className="text-lg font-medium text-left text-white" data-testid="link-insights-mobile-insights">
                       Case Studies
+                    </span>
+                  </Link>
+                  <Link href="/blog">
+                    <span className="text-lg font-medium text-left hover:text-primary transition-colors" data-testid="link-insights-mobile-blog">
+                      Blog
                     </span>
                   </Link>
                   <Link href="/contact">
