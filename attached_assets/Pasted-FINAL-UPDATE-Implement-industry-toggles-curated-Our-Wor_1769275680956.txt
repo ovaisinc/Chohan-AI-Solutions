@@ -1,0 +1,218 @@
+FINAL UPDATE: Implement industry toggles + curated “Our Work” cards (balanced + premium)
+
+In home.tsx, update the “Our Work” section to include:
+
+A) INDUSTRY TOGGLES (top-level)
+Create a horizontal, pill-style industry toggle row ABOVE the existing “AI & Automation / Data & Dashboards” toggle.
+Industries (exact labels):
+1) Amusement & Entertainment
+2) Trucking & Logistics
+3) Auto Dealerships
+4) Marketing Agencies
+5) Healthcare & Clinics
+6) Real Estate
+7) Finance & Accounting
+
+Behavior:
+- Default selected industry: Amusement & Entertainment
+- Industry toggle row should be horizontally scrollable on mobile
+- Active industry pill uses brand accent styling
+- Smooth transitions when switching industries
+
+B) CATEGORY TOGGLES (second row)
+Keep the existing category toggle:
+- AI & Automation
+- Data & Dashboards
+Default category: AI & Automation
+
+C) CARD LIMIT (curated + balanced)
+For every industry:
+- Show EXACTLY 3 cards for AI & Automation
+- Show EXACTLY 3 cards for Data & Dashboards
+No more than 3 visible at a time per category (avoid clutter).
+Keep the grid balanced: 3 columns desktop, 2 tablet, 1 mobile.
+
+Each card must include:
+- Category tag (AI & Automation or Data & Dashboards)
+- Project title
+- 1–2 sentence description (problem solved)
+- Bold result metric line
+- Dark theme styling: rounded-xl, border-white/10, subtle gradient background, soft hover glow, slight lift on hover
+
+D) CONTENT (use these exact cards)
+
+1) Amusement & Entertainment
+AI & Automation (3):
+- Birthday Party Booking Automation
+  Automated party inquiries, deposits, confirmations, and scheduling workflows.
+  Result: 48% increase in party bookings.
+- Digital Waiver & Guest Check-In
+  QR-based waiver signing and automated guest data capture at the front desk.
+  Result: 70% faster front-desk processing.
+- Arcade Loyalty Automation
+  Integrated game card usage data with CRM for automated loyalty offers.
+  Result: 22% increase in repeat visits.
+
+Data & Dashboards (3):
+- Venue Executive Dashboard
+  Real-time revenue, labor cost, and margin tracking for leadership.
+  Result: Reporting cycle reduced by 70%.
+- Arcade & F&B Analytics
+  Live sales combining game card swipes and food/beverage orders.
+  Result: Improved labor efficiency by 18%.
+- Attraction Utilization Tracker
+  Heatmaps + usage metrics for lanes, zones, and attractions.
+  Result: Reduced manual reporting workload by 50%.
+
+2) Trucking & Logistics
+AI & Automation (3):
+- Invoice Matching Automation
+  Automated contract-to-invoice reconciliation using OCR and workflow logic.
+  Result: 92% reduction in manual review time.
+- Dispatch & Status Update Automation
+  Automated pickup/delivery status messaging to customers and internal teams.
+  Result: 60% faster response times.
+- POD & Document Collection Workflow
+  Automated document chasing, intake, and shipment file organization.
+  Result: 75% fewer missing documents.
+
+Data & Dashboards (3):
+- Ops Performance Dashboard
+  On-time %, exceptions, and shipment health monitoring in one view.
+  Result: Reduced escalations by 30%.
+- Profit Per Load Dashboard
+  Margin tracking by lane, customer, and carrier with trend insights.
+  Result: Improved margin visibility across all loads.
+- Billing & Aging Dashboard
+  Real-time AR aging, payment status, and billing pipeline.
+  Result: Faster collections and cleaner billing workflow.
+
+3) Auto Dealerships
+AI & Automation (3):
+- Lead Intake & Routing Automation
+  Auto-capture leads from web/forms and route to the right rep instantly.
+  Result: 35% faster lead response times.
+- Service Appointment Booking Automation
+  Automated scheduling, reminders, and confirmation workflows.
+  Result: 25% fewer no-shows.
+- Follow-Up & Reactivation Campaigns
+  Automated SMS/email follow-ups for quotes, service, and trade-ins.
+  Result: 3x engagement rate.
+
+Data & Dashboards (3):
+- Sales Funnel Dashboard
+  Lead-to-sale conversion tracking by source and rep.
+  Result: Increased pipeline visibility.
+- Service Department KPI Dashboard
+  Daily RO volume, show rate, and technician utilization.
+  Result: Improved scheduling and throughput.
+- Marketing Source Performance
+  ROI dashboard for paid channels, calls, and form leads.
+  Result: Better budget allocation decisions.
+
+4) Marketing Agencies
+AI & Automation (3):
+- Client Reporting Automation
+  Automated weekly/monthly report generation and delivery.
+  Result: 40% less manual reporting work.
+- Lead Capture & CRM Automation
+  Form capture → enrichment → CRM entry → follow-up sequences.
+  Result: 2x faster lead handoff.
+- Campaign QA & Alerting
+  Automated anomaly alerts for spend spikes and performance drops.
+  Result: Issues caught 3x faster.
+
+Data & Dashboards (3):
+- Multi-Client Performance Dashboard
+  Consolidated KPIs across client accounts with drilldowns.
+  Result: Faster executive reporting.
+- Paid Ads ROI Dashboard
+  CAC, ROAS, conversion rate trends and insights.
+  Result: Improved optimization decisions.
+- Content & Social Analytics
+  Engagement, growth, and content performance by channel.
+  Result: Clearer content direction.
+
+5) Healthcare & Clinics
+AI & Automation (3):
+- Patient Intake Automation
+  Digital intake forms + auto-upload into clinic systems/CRM.
+  Result: 60% reduction in admin time.
+- Appointment Reminders & Confirmations
+  Automated SMS reminders, confirmations, and reschedule flows.
+  Result: 25% fewer no-shows.
+- Insurance Eligibility / Benefits Workflow
+  Automated benefits checks and documentation routing.
+  Result: Faster verification turnaround.
+
+Data & Dashboards (3):
+- Clinic Operations Dashboard
+  Volume, utilization, and throughput tracking by provider.
+  Result: Improved scheduling decisions.
+- Revenue & Billing Dashboard
+  Claims pipeline, denials, and collections visibility.
+  Result: Cleaner revenue tracking.
+- Patient Retention Dashboard
+  Recall/overdue segments and reactivation effectiveness.
+  Result: Higher retention visibility.
+
+6) Real Estate
+AI & Automation (3):
+- Lead Intake & Qualification Automation
+  Capture and qualify inbound leads, route to agent/team.
+  Result: 50% faster response times.
+- Showing Scheduling Automation
+  Auto-scheduling + confirmations + follow-up messages.
+  Result: More booked showings.
+- Tenant Maintenance Ticket Automation
+  Intake, triage, and vendor routing for maintenance requests.
+  Result: 40% faster resolution time.
+
+Data & Dashboards (3):
+- Portfolio Performance Dashboard
+  Rent collected, occupancy, and NOI trends by property.
+  Result: Better owner reporting.
+- Leasing Pipeline Dashboard
+  Leads → tours → applications → signed leases tracking.
+  Result: Improved leasing visibility.
+- Maintenance & Vendor Dashboard
+  Ticket volume, SLA, vendor performance, cost tracking.
+  Result: Reduced operational friction.
+
+7) Finance & Accounting
+AI & Automation (3):
+- Invoice Matching Automation
+  OCR + rules to reconcile invoices to contracts/POs.
+  Result: 92% reduction in manual review time.
+- Month-End Close Automation
+  Automated reconciliations and journal prep workflows.
+  Result: Close cycle reduced by 30%.
+- Document Extraction & Filing
+  Extract key fields and auto-file into organized folders/systems.
+  Result: 80% less manual data entry.
+
+Data & Dashboards (3):
+- Executive Finance Dashboard
+  Revenue, margin, spend, and forecast in one view.
+  Result: Faster decision-making.
+- Spend & Vendor Analytics
+  Vendor trends, leakage detection, and cost optimization views.
+  Result: Identified cost savings opportunities.
+- AR/AP Operations Dashboard
+  Aging, payment status, and cash flow visibility.
+  Result: Cleaner cash operations.
+
+E) OPTIONAL CTA (recommended)
+Add a centered button under the grid:
+Text: “View More Use Cases”
+Style: subtle outline button in dark theme
+Behavior: for now, scrolls to the “Book a Call” CTA or opens the Calendly link (use existing booking behavior).
+
+F) DESIGN REQUIREMENTS
+- Keep everything consistent with the current dark theme
+- Do not change navbar or hero design
+- Ensure spacing feels premium (avoid crowded cards)
+- Smooth animations on tab changes (simple fade/slide)
+- No client logos or client names
+
+Implement this cleanly in the existing Our Work section code.

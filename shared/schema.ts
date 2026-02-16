@@ -1,0 +1,14 @@
+import { sql } from "/@fs/home/runner/workspace/node_modules/.vite/deps/drizzle-orm.js?v=ea21f9df";
+import { pgTable, text, varchar } from "/@fs/home/runner/workspace/node_modules/.vite/deps/drizzle-orm_pg-core.js?v=ff6c00a0";
+import { createInsertSchema } from "/@fs/home/runner/workspace/node_modules/.vite/deps/drizzle-zod.js?v=ce7e7d94";
+export const users = pgTable("users", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  username: text("username").notNull().unique(),
+  password: text("password").notNull()
+});
+export const insertUserSchema = createInsertSchema(users).pick({
+  username: true,
+  password: true
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjaGVtYS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBzcWwgfSBmcm9tIFwiZHJpenpsZS1vcm1cIjtcbmltcG9ydCB7IHBnVGFibGUsIHRleHQsIHZhcmNoYXIgfSBmcm9tIFwiZHJpenpsZS1vcm0vcGctY29yZVwiO1xuaW1wb3J0IHsgY3JlYXRlSW5zZXJ0U2NoZW1hIH0gZnJvbSBcImRyaXp6bGUtem9kXCI7XG5pbXBvcnQgeyB6IH0gZnJvbSBcInpvZFwiO1xuXG5leHBvcnQgY29uc3QgdXNlcnMgPSBwZ1RhYmxlKFwidXNlcnNcIiwge1xuICBpZDogdmFyY2hhcihcImlkXCIpLnByaW1hcnlLZXkoKS5kZWZhdWx0KHNxbGBnZW5fcmFuZG9tX3V1aWQoKWApLFxuICB1c2VybmFtZTogdGV4dChcInVzZXJuYW1lXCIpLm5vdE51bGwoKS51bmlxdWUoKSxcbiAgcGFzc3dvcmQ6IHRleHQoXCJwYXNzd29yZFwiKS5ub3ROdWxsKCksXG59KTtcblxuZXhwb3J0IGNvbnN0IGluc2VydFVzZXJTY2hlbWEgPSBjcmVhdGVJbnNlcnRTY2hlbWEodXNlcnMpLnBpY2soe1xuICB1c2VybmFtZTogdHJ1ZSxcbiAgcGFzc3dvcmQ6IHRydWUsXG59KTtcblxuZXhwb3J0IHR5cGUgSW5zZXJ0VXNlciA9IHouaW5mZXI8dHlwZW9mIGluc2VydFVzZXJTY2hlbWE+O1xuZXhwb3J0IHR5cGUgVXNlciA9IHR5cGVvZiB1c2Vycy4kaW5mZXJTZWxlY3Q7XG4iXSwibWFwcGluZ3MiOiJBQUFBLFNBQVMsV0FBVztBQUNwQixTQUFTLFNBQVMsTUFBTSxlQUFlO0FBQ3ZDLFNBQVMsMEJBQTBCO0FBRzVCLGFBQU0sUUFBUSxRQUFRLFNBQVM7QUFBQSxFQUNwQyxJQUFJLFFBQVEsSUFBSSxFQUFFLFdBQVcsRUFBRSxRQUFRLHNCQUFzQjtBQUFBLEVBQzdELFVBQVUsS0FBSyxVQUFVLEVBQUUsUUFBUSxFQUFFLE9BQU87QUFBQSxFQUM1QyxVQUFVLEtBQUssVUFBVSxFQUFFLFFBQVE7QUFDckMsQ0FBQztBQUVNLGFBQU0sbUJBQW1CLG1CQUFtQixLQUFLLEVBQUUsS0FBSztBQUFBLEVBQzdELFVBQVU7QUFBQSxFQUNWLFVBQVU7QUFDWixDQUFDOyIsIm5hbWVzIjpbXX0=

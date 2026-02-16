@@ -1,0 +1,14 @@
+import { defineConfig } from "/@fs/home/runner/workspace/node_modules/.vite/deps/drizzle-kit.js?v=946baca3";
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+export default defineConfig({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRyaXp6bGUuY29uZmlnLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGRlZmluZUNvbmZpZyB9IGZyb20gXCJkcml6emxlLWtpdFwiO1xuXG5pZiAoIXByb2Nlc3MuZW52LkRBVEFCQVNFX1VSTCkge1xuICB0aHJvdyBuZXcgRXJyb3IoXCJEQVRBQkFTRV9VUkwsIGVuc3VyZSB0aGUgZGF0YWJhc2UgaXMgcHJvdmlzaW9uZWRcIik7XG59XG5cbmV4cG9ydCBkZWZhdWx0IGRlZmluZUNvbmZpZyh7XG4gIG91dDogXCIuL21pZ3JhdGlvbnNcIixcbiAgc2NoZW1hOiBcIi4vc2hhcmVkL3NjaGVtYS50c1wiLFxuICBkaWFsZWN0OiBcInBvc3RncmVzcWxcIixcbiAgZGJDcmVkZW50aWFsczoge1xuICAgIHVybDogcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMLFxuICB9LFxufSk7XG4iXSwibWFwcGluZ3MiOiJBQUFBLFNBQVMsb0JBQW9CO0FBRTdCLElBQUksQ0FBQyxRQUFRLElBQUksY0FBYztBQUM3QixRQUFNLElBQUksTUFBTSxrREFBa0Q7QUFDcEU7QUFFQSxlQUFlLGFBQWE7QUFBQSxFQUMxQixLQUFLO0FBQUEsRUFDTCxRQUFRO0FBQUEsRUFDUixTQUFTO0FBQUEsRUFDVCxlQUFlO0FBQUEsSUFDYixLQUFLLFFBQVEsSUFBSTtBQUFBLEVBQ25CO0FBQ0YsQ0FBQzsiLCJuYW1lcyI6W119

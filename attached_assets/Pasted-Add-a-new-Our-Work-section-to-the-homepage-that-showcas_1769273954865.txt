@@ -1,0 +1,91 @@
+Add a new “Our Work” section to the homepage that showcases project use cases in a premium consulting-style layout.
+
+STRUCTURE:
+
+1) Section Header:
+Title: Our Work
+Subtitle: Real-world AI and data solutions delivering measurable impact.
+
+2) Tabs / Filter System:
+Add two toggle tabs at the top:
+- AI & Automation
+- Data & Dashboards
+
+Default tab: AI & Automation
+
+3) Project Grid Layout:
+Display projects in a responsive 3-column grid (desktop), 2-column (tablet), 1-column (mobile).
+
+Each project card should include:
+- Category tag (AI Automation or Power BI)
+- Project title
+- 1–2 sentence description of the problem solved
+- A bold result metric line
+- Dark card style with subtle border (border-white/10), rounded corners, soft hover glow
+
+Populate with example projects:
+
+AI & Automation:
+- Invoice Matching Automation
+Description: Automated contract-to-invoice reconciliation using OCR and workflow logic.
+Result: 92% reduction in manual review time.
+
+- Auto Booking System
+Description: Built automated intake and scheduling pipeline connected to CRM.
+Result: 3x increase in booked leads.
+
+- Freight Operations Automation
+Description: Automated shipment tracking updates and customer communications.
+Result: 60% faster response time.
+
+- Email Parsing Automation
+Description: AI system that extracts structured data from inbound business emails.
+Result: Eliminated 80% manual data entry.
+
+Data & Dashboards:
+- Executive KPI Dashboard
+Description: Real-time finance and operations dashboard for leadership reporting.
+Result: Reporting cycle reduced by 70%.
+
+- Hospitality Analytics Dashboard
+Description: Live sales, labor, and guest traffic reporting across 12 locations.
+Result: Improved labor efficiency by 18%.
+
+- Operations Performance Dashboard
+Description: Centralized performance monitoring across departments.
+Result: Reduced manual reporting workload by 50%.
+
+4) Metrics Credibility Strip:
+Below the project grid add a horizontal metrics bar with these stats:
+- 500+ workflows automated
+- 2,000+ hours saved
+- 15+ industries supported
+- Enterprise-grade automation systems deployed
+
+Style:
+Large bold numbers, subtle separators, dark background, centered layout.
+
+5) “What We Build” Section:
+Add a follow-up section titled: What We Build
+
+Display 5 feature cards in a grid:
+
+- Invoice Automation Systems
+- AI Scheduling & Booking Systems
+- CRM Intake Pipelines
+- Executive Analytics Dashboards
+- Internal AI Assistants
+
+Each card should include:
+- Title
+- One-line description
+- Consistent dark theme styling
+
+DESIGN REQUIREMENTS:
+- Maintain current dark theme aesthetic
+- Use subtle gradients, soft shadows, and hover animations
+- Keep spacing consistent with existing sections
+- Do not change navbar or hero section
+- Mobile responsive layout
+
+Add smooth entrance animations when scrolling into view.
