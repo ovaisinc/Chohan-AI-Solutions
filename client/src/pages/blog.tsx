@@ -24,7 +24,14 @@ export default function BlogPage() {
   }, []);
 
   const sortedPosts = useMemo(() => {
-    return blogPosts.slice().sort((a, b) => (a.date < b.date ? 1 : -1));
+    return blogPosts.slice().sort((a, b) => {
+      if (a.date !== b.date) {
+        return a.date < b.date ? 1 : -1;
+      }
+
+      // Keep original array order when dates are identical
+      return blogPosts.indexOf(a) - blogPosts.indexOf(b);
+    });
   }, []);
 
   const filteredPosts = useMemo(() => {
