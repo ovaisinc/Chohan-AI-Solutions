@@ -54,27 +54,26 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-white">
-      {/* Left-side logo (match homepage pattern) */}
-      <a
-        href="/"
-        className="absolute left-0 top-0 z-[60] px-3 md:px-4 pt-2 md:pt-1"
-        data-testid="link-left-logo"
-      >
-        <img
-          src="/logo-left.png"
-          alt="Chohan"
-          className="h-32 sm:h-40 md:h-60 w-auto max-w-[70vw] object-contain"
-          data-testid="img-left-logo"
-        />
-      </a>
-
       {/* Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled ? "bg-background/80 backdrop-blur-md border-b border-white/5" : "bg-transparent"
         }`}
       >
-        <div className="w-full max-w-[1920px] mx-auto pl-2 pr-6 md:px-12 pt-4 pb-2 flex items-start justify-end">
+        <div className="relative w-full max-w-[1920px] mx-auto pl-2 pr-6 md:px-12 pt-4 pb-2 flex items-start justify-end">
+          <a
+            href="/"
+            className="absolute left-1/2 top-2 -translate-x-1/2 z-[60]"
+            data-testid="link-left-logo"
+          >
+            <img
+              src="/logo-left.png"
+              alt="Chohan"
+              className="h-24 sm:h-28 md:h-44 w-auto max-w-[70vw] object-contain"
+              data-testid="img-left-logo"
+            />
+          </a>
+
           <div className="hidden md:flex items-center space-x-8 mt-4">
             <button
               onClick={() => scrollToSection("services")}

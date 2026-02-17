@@ -143,10 +143,10 @@ export default function BlogPostPage() {
     <div className="min-h-screen bg-background text-white overflow-x-hidden selection:bg-primary selection:text-white">
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-md">
-        <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-6 md:px-12 py-4">
+        <div className="relative mx-auto flex w-full max-w-[1920px] items-center justify-end px-6 md:px-12 py-4">
           <Link href="/">
-            <a className="shrink-0 flex items-center -mt-6 md:-mt-8 -mb-4 md:-mb-6" data-testid="link-blog-post-logo">
-              <img src="/logo-header.png" alt="Chohan" className="h-16 md:h-20 w-auto" data-testid="img-blog-post-logo" />
+            <a className="absolute left-1/2 top-2 -translate-x-1/2 shrink-0 flex items-center" data-testid="link-blog-post-logo">
+              <img src="/logo-left.png" alt="Chohan" className="h-24 sm:h-28 md:h-44 w-auto max-w-[70vw] object-contain" data-testid="img-blog-post-logo" />
             </a>
           </Link>
 
@@ -185,7 +185,7 @@ export default function BlogPostPage() {
         </div>
       </header>
 
-      <main className="relative z-0 pb-32 pt-[120px] md:pt-[140px]">
+      <main className="relative z-0 pb-32 pt-44 md:pt-56">
         <div className="mx-auto w-full max-w-[1200px] px-6 lg:px-8">
 
           {/* Back Link */}
