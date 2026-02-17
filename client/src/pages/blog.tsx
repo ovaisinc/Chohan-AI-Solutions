@@ -52,8 +52,8 @@ export default function BlogPage() {
               <img
                 src="/logo.svg"
                 alt="Chohan"
-                className="h-16 md:h-20 w-auto object-contain"
-                style={{ maxHeight: "80px" }}
+                className="h-32 md:h-40 w-auto object-contain"
+                style={{ maxHeight: "160px" }}
                 data-testid="img-blog-logo"
               />
             </a>
