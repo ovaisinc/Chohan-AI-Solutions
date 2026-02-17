@@ -1,7 +1,7 @@
 import { Link, useRoute } from "wouter";
 import { useEffect, Fragment } from "react";
 import { blogPosts, blogPostsBySlug } from "@/data/blog";
-import { ArrowLeft, ArrowRight, Calendar, Clock, Menu, Tag } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Clock, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
@@ -23,13 +23,12 @@ function renderMarkdown(content: string) {
   const flushParagraph = () => {
     if (!paragraph.length) return;
     const text = paragraph.join(" ");
-    // Handle bold text within paragraphs
     const parts = text.split(/(\*\*[^*]+\*\*)/g);
     blocks.push(
-      <p key={`p-${blocks.length}`} className="text-white/70 leading-[1.8] text-[17px]">
+      <p key={`p-${blocks.length}`} className="text-white/60 leading-[1.85] text-[16px]">
         {parts.map((part, i) => {
           if (part.startsWith("**") && part.endsWith("**")) {
-            return <strong key={i} className="text-white font-semibold">{part.slice(2, -2)}</strong>;
+            return <strong key={i} className="text-white/85 font-semibold">{part.slice(2, -2)}</strong>;
           }
           return part;
         })}
@@ -41,17 +40,16 @@ function renderMarkdown(content: string) {
   const flushBullets = () => {
     if (!bullets.length) return;
     blocks.push(
-      <ul key={`ul-${blocks.length}`} className="space-y-3 pl-0 text-white/70 text-[17px] leading-[1.8]">
+      <ul key={`ul-${blocks.length}`} className="space-y-3.5 pl-0 text-white/60 text-[16px] leading-[1.85]">
         {bullets.map((item, idx) => {
-          // Handle bold text in bullet items
           const parts = item.split(/(\*\*[^*]+\*\*)/g);
           return (
-            <li key={idx} className="flex gap-3">
-              <span className="mt-[11px] h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+            <li key={idx} className="flex gap-4">
+              <span className="mt-[12px] h-[5px] w-[5px] shrink-0 rounded-full bg-primary/60" />
               <span>
                 {parts.map((part, i) => {
                   if (part.startsWith("**") && part.endsWith("**")) {
-                    return <strong key={i} className="text-white font-semibold">{part.slice(2, -2)}</strong>;
+                    return <strong key={i} className="text-white/85 font-semibold">{part.slice(2, -2)}</strong>;
                   }
                   return part;
                 })}
@@ -77,7 +75,7 @@ function renderMarkdown(content: string) {
       flushParagraph();
       flushBullets();
       blocks.push(
-        <h2 key={`h2-${idx}`} className="text-2xl font-display font-bold text-white pt-6 pb-1">
+        <h2 key={`h2-${idx}`} className="text-[22px] font-display font-bold text-white/95 pt-8 pb-1 tracking-[-0.01em]">
           {line.replace("## ", "")}
         </h2>,
       );
@@ -88,7 +86,7 @@ function renderMarkdown(content: string) {
       flushParagraph();
       flushBullets();
       blocks.push(
-        <h3 key={`h3-${idx}`} className="text-xl font-display font-semibold text-white pt-4 pb-1">
+        <h3 key={`h3-${idx}`} className="text-[18px] font-display font-semibold text-white/85 pt-5 pb-1">
           {line.replace("### ", "")}
         </h3>,
       );
@@ -123,11 +121,11 @@ export default function BlogPostPage() {
     return (
       <div className="min-h-screen bg-[#090b10] text-white flex items-center justify-center px-6">
         <div className="max-w-lg w-full text-center">
-          <h1 className="text-3xl font-display font-bold">Article not found</h1>
-          <p className="text-white/50 mt-3">This article may have been moved or removed.</p>
+          <h1 className="text-2xl font-display font-bold">Article not found</h1>
+          <p className="text-white/40 mt-3 text-[14px]">This article may have been moved or removed.</p>
           <Link href="/blog">
-            <Button className="mt-8 rounded-full bg-white px-6 text-black hover:bg-gray-200">
-              <ArrowLeft className="mr-2 h-4 w-4" />
+            <Button className="mt-8 rounded-full bg-white px-6 text-[13px] text-black hover:bg-white/90">
+              <ArrowLeft className="mr-2 h-3.5 w-3.5" />
               Back to Insights
             </Button>
           </Link>
@@ -144,27 +142,27 @@ export default function BlogPostPage() {
   return (
     <div className="min-h-screen bg-[#090b10] text-white overflow-x-hidden selection:bg-primary selection:text-white">
       {/* Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#090b10]/95 backdrop-blur-md">
-        <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.06] bg-[#090b10]/80 backdrop-blur-xl">
+        <div className="mx-auto flex h-[72px] w-full max-w-[1200px] items-center justify-between px-6 lg:px-8">
           <Link href="/">
             <a className="flex items-center">
               <img
                 src="/logo-header.png"
                 alt="Chohan"
-                className="h-10 w-auto md:h-12"
+                className="h-9 w-auto md:h-10"
               />
               <span className="sr-only">Chohan</span>
             </a>
           </Link>
 
-          <nav className="hidden items-center gap-7 md:flex">
-            <a href="/#services" className="text-sm font-medium text-white/80 transition-colors hover:text-white">Services</a>
-            <a href="/#process" className="text-sm font-medium text-white/80 transition-colors hover:text-white">Process</a>
-            <a href="/#results" className="text-sm font-medium text-white/80 transition-colors hover:text-white">Results</a>
-            <Link href="/insights"><span className="text-sm font-medium text-white/80 transition-colors hover:text-white">Case Studies</span></Link>
-            <Link href="/blog"><span className="text-sm font-medium text-white">Blog</span></Link>
+          <nav className="hidden items-center gap-8 md:flex">
+            <a href="/#services" className="text-[13px] font-medium text-white/55 tracking-wide transition-colors duration-200 hover:text-white">Services</a>
+            <a href="/#process" className="text-[13px] font-medium text-white/55 tracking-wide transition-colors duration-200 hover:text-white">Process</a>
+            <a href="/#results" className="text-[13px] font-medium text-white/55 tracking-wide transition-colors duration-200 hover:text-white">Results</a>
+            <Link href="/insights"><span className="text-[13px] font-medium text-white/55 tracking-wide transition-colors duration-200 hover:text-white">Case Studies</span></Link>
+            <Link href="/blog"><span className="text-[13px] font-medium text-white tracking-wide">Blog</span></Link>
             <Link href="/contact">
-              <Button className="rounded-full bg-white px-6 text-black hover:bg-gray-200">Contact Us</Button>
+              <Button className="rounded-full bg-white px-5 py-2 text-[13px] font-medium text-black hover:bg-white/90 transition-colors duration-200">Contact Us</Button>
             </Link>
           </nav>
 
@@ -172,18 +170,18 @@ export default function BlogPostPage() {
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="text-white">
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] border-white/10 bg-[#090b10]">
-                <div className="mt-10 flex flex-col space-y-8">
-                  <a href="/#services" className="text-left text-lg font-medium transition-colors hover:text-primary">Services</a>
-                  <a href="/#process" className="text-left text-lg font-medium transition-colors hover:text-primary">Process</a>
-                  <a href="/#results" className="text-left text-lg font-medium transition-colors hover:text-primary">Results</a>
-                  <Link href="/insights"><span className="text-left text-lg font-medium transition-colors hover:text-primary">Case Studies</span></Link>
-                  <Link href="/blog"><span className="text-left text-lg font-medium text-white">Blog</span></Link>
+              <SheetContent side="right" className="w-[280px] border-white/[0.06] bg-[#090b10]">
+                <div className="mt-12 flex flex-col space-y-7">
+                  <a href="/#services" className="text-[15px] font-medium text-white/70 transition-colors hover:text-white">Services</a>
+                  <a href="/#process" className="text-[15px] font-medium text-white/70 transition-colors hover:text-white">Process</a>
+                  <a href="/#results" className="text-[15px] font-medium text-white/70 transition-colors hover:text-white">Results</a>
+                  <Link href="/insights"><span className="text-[15px] font-medium text-white/70 transition-colors hover:text-white">Case Studies</span></Link>
+                  <Link href="/blog"><span className="text-[15px] font-medium text-white">Blog</span></Link>
                   <Link href="/contact">
-                    <Button className="w-full rounded-full bg-primary text-white hover:bg-primary/90">Contact Us</Button>
+                    <Button className="w-full rounded-full bg-white text-black hover:bg-white/90 mt-2">Contact Us</Button>
                   </Link>
                 </div>
               </SheetContent>
@@ -192,54 +190,54 @@ export default function BlogPostPage() {
         </div>
       </header>
 
-      <main className="relative z-0 pb-24 pt-28 md:pt-36">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      <main className="relative z-0 pb-32 pt-[120px] md:pt-[140px]">
+        <div className="mx-auto w-full max-w-[1200px] px-6 lg:px-8">
 
           {/* Back Link */}
           <Link href="/blog">
-            <a className="inline-flex items-center text-sm font-medium text-white/50 hover:text-white transition-colors mb-10">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Insights
+            <a className="inline-flex items-center text-[12px] font-medium text-white/35 hover:text-white/70 transition-colors duration-200 mb-14 tracking-wide uppercase">
+              <ArrowLeft className="mr-2 h-3.5 w-3.5" />
+              All Insights
             </a>
           </Link>
 
           {/* Article Header */}
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">
+          <div className="max-w-[680px]">
+            <div className="flex items-center gap-3 mb-7">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/90">
                 {post.category}
               </span>
-              <span className="h-1 w-1 rounded-full bg-white/30" />
-              <span className="text-xs text-white/40">
+              <span className="text-white/15">|</span>
+              <span className="text-[11px] text-white/30 tracking-wide">
                 {post.readTime} min read
               </span>
             </div>
 
-            <h1 className="text-4xl font-display font-bold leading-[1.1] md:text-5xl lg:text-[3.25rem]">
+            <h1 className="text-[clamp(2rem,4.5vw,2.75rem)] font-display font-bold leading-[1.12] tracking-[-0.02em]">
               {post.title}
             </h1>
 
-            <p className="mt-6 text-lg text-white/55 leading-relaxed">
+            <p className="mt-7 text-[16px] text-white/45 leading-[1.75]">
               {post.excerpt}
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-5 text-sm text-white/45">
+            <div className="mt-10 flex flex-wrap items-center gap-6 text-[12px] text-white/30 pb-10 border-b border-white/[0.06]">
               <span className="inline-flex items-center gap-1.5">
-                <Calendar className="h-3.5 w-3.5" />
+                <Calendar className="h-3 w-3" />
                 {formatDate(post.date)}
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <Clock className="h-3.5 w-3.5" />
+                <Clock className="h-3 w-3" />
                 {post.readTime} min read
               </span>
-              <span className="text-white/40">
-                By {post.author}
+              <span className="text-white/25">
+                {post.author}
               </span>
             </div>
           </div>
 
           {/* Hero Image */}
-          <div className="mt-12 aspect-[21/9] w-full overflow-hidden rounded-sm">
+          <div className="mt-14 aspect-[2.2/1] max-w-[920px] overflow-hidden rounded-[4px]">
             <img
               src={post.heroImage}
               alt={post.title}
@@ -249,25 +247,25 @@ export default function BlogPostPage() {
           </div>
 
           {/* Article Content */}
-          <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-[1fr_280px]">
+          <div className="mt-20 grid grid-cols-1 gap-20 lg:grid-cols-[1fr_240px]">
             {/* Main Content */}
-            <article className="max-w-3xl space-y-5">
+            <article className="max-w-[680px] space-y-6">
               {renderMarkdown(post.content)}
             </article>
 
             {/* Sidebar */}
             <aside className="hidden lg:block">
-              <div className="sticky top-28">
+              <div className="sticky top-32">
                 {/* Tags */}
-                <div className="mb-10">
-                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40 mb-4">
+                <div className="mb-12">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/25 mb-5">
                     Topics
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {post.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex text-xs text-white/60 border border-white/10 rounded-full px-3 py-1.5 hover:border-white/20 transition-colors"
+                        className="inline-flex text-[11px] text-white/40 border border-white/[0.08] rounded-full px-3.5 py-1.5 hover:border-white/[0.15] transition-colors duration-200"
                       >
                         {tag}
                       </span>
@@ -276,15 +274,15 @@ export default function BlogPostPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="border-t border-white/10 pt-8">
-                  <p className="text-sm font-display font-semibold text-white mb-2">
+                <div className="border-t border-white/[0.06] pt-10">
+                  <p className="text-[14px] font-display font-semibold text-white/80 mb-2.5">
                     Need help with AI strategy?
                   </p>
-                  <p className="text-xs text-white/45 leading-relaxed mb-5">
+                  <p className="text-[12px] text-white/35 leading-[1.7] mb-6">
                     We help leadership teams design and implement AI initiatives that deliver measurable results.
                   </p>
                   <Link href="/contact">
-                    <Button className="w-full rounded-full bg-white px-6 text-sm text-black hover:bg-gray-200">
+                    <Button className="w-full rounded-full bg-white px-6 text-[12px] font-medium text-[#090b10] hover:bg-white/90 transition-colors duration-200">
                       Get in Touch
                     </Button>
                   </Link>
@@ -294,15 +292,15 @@ export default function BlogPostPage() {
           </div>
 
           {/* Mobile Tags */}
-          <div className="mt-12 lg:hidden">
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40 mb-4">
+          <div className="mt-16 lg:hidden">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/25 mb-5">
               Topics
             </p>
             <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex text-xs text-white/60 border border-white/10 rounded-full px-3 py-1.5"
+                  className="inline-flex text-[11px] text-white/40 border border-white/[0.08] rounded-full px-3.5 py-1.5"
                 >
                   {tag}
                 </span>
@@ -312,29 +310,32 @@ export default function BlogPostPage() {
 
           {/* Related Articles */}
           {relatedPosts.length > 0 && (
-            <section className="mt-24 border-t border-white/10 pt-16">
-              <h2 className="text-xl font-display font-semibold mb-10">Related Articles</h2>
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <section className="mt-28 border-t border-white/[0.06] pt-16">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/25 mb-3">
+                Continue Reading
+              </p>
+              <h2 className="text-[20px] font-display font-semibold mb-12 tracking-[-0.01em]">Related Articles</h2>
+              <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
                 {relatedPosts.map((related) => (
                   <Link key={related.slug} href={`/blog/${related.slug}`}>
                     <a className="group block">
-                      <div className="grid grid-cols-[1fr] gap-5 sm:grid-cols-[200px_1fr] items-start">
-                        <div className="aspect-[16/10] w-full overflow-hidden rounded-sm">
+                      <div className="flex flex-col gap-5 sm:flex-row sm:gap-6 items-start">
+                        <div className="aspect-[16/10] w-full sm:w-[200px] shrink-0 overflow-hidden rounded-[3px]">
                           <img
                             src={related.heroImage}
                             alt={related.title}
-                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                            className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                             loading="lazy"
                           />
                         </div>
-                        <div>
-                          <span className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">
+                        <div className="pt-0.5">
+                          <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/80">
                             {related.category}
                           </span>
-                          <h3 className="mt-2 text-base font-display font-semibold leading-snug transition-colors group-hover:text-primary">
+                          <h3 className="mt-2.5 text-[15px] font-display font-semibold leading-[1.35] tracking-[-0.01em] transition-colors duration-300 group-hover:text-primary/90">
                             {related.title}
                           </h3>
-                          <p className="mt-2 text-sm text-white/45 line-clamp-2">{related.excerpt}</p>
+                          <p className="mt-2.5 text-[12px] text-white/35 leading-[1.6] line-clamp-2">{related.excerpt}</p>
                         </div>
                       </div>
                     </a>
@@ -345,18 +346,18 @@ export default function BlogPostPage() {
           )}
 
           {/* Bottom CTA (mobile) */}
-          <section className="mt-20 border-t border-white/10 pt-16 lg:hidden">
-            <h3 className="text-2xl font-display font-bold">
+          <section className="mt-24 border-t border-white/[0.06] pt-16 lg:hidden">
+            <h3 className="text-[clamp(1.5rem,3vw,2rem)] font-display font-bold tracking-[-0.01em]">
               Ready to put AI to work?
             </h3>
-            <p className="mt-4 text-base text-white/55 leading-relaxed">
+            <p className="mt-5 text-[14px] text-white/40 leading-[1.75]">
               We help leadership teams design, implement, and scale AI initiatives that deliver measurable business outcomes.
             </p>
-            <div className="mt-8">
+            <div className="mt-10">
               <Link href="/contact">
-                <Button className="rounded-full bg-white px-8 py-3 text-sm font-medium text-black hover:bg-gray-200">
+                <Button className="rounded-full bg-white px-7 py-2.5 text-[13px] font-medium text-[#090b10] hover:bg-white/90 transition-colors duration-200">
                   Schedule a Consultation
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-3.5 w-3.5" />
                 </Button>
               </Link>
             </div>
