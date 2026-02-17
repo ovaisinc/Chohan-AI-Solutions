@@ -54,25 +54,28 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-white">
+      {/* Left-side logo (match homepage pattern) */}
+      <a
+        href="/"
+        className="absolute left-0 top-0 z-[60] px-3 md:px-4 pt-2 md:pt-1"
+        data-testid="link-left-logo"
+      >
+        <img
+          src="/logo-left.png"
+          alt="Chohan"
+          className="h-32 sm:h-40 md:h-60 w-auto max-w-[70vw] object-contain"
+          data-testid="img-left-logo"
+        />
+      </a>
+
       {/* Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled ? "bg-background/80 backdrop-blur-md border-b border-white/5" : "bg-transparent"
         }`}
       >
-        <div className="w-full max-w-[1920px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between gap-6">
-          <Link href="/">
-            <a className="shrink-0 flex items-center" data-testid="link-nav-logo">
-              <img
-                src="/logo-left.png"
-                alt="Chohan"
-                className="h-14 md:h-16 w-auto bg-transparent"
-                data-testid="img-nav-logo"
-              />
-            </a>
-          </Link>
-
-          <div className="hidden md:flex items-center space-x-8">
+        <div className="w-full max-w-[1920px] mx-auto pl-2 pr-6 md:px-12 pt-4 pb-2 flex items-start justify-end">
+          <div className="hidden md:flex items-center space-x-8 mt-4">
             <button
               onClick={() => scrollToSection("services")}
               className="text-sm font-medium hover:text-primary transition-colors"
@@ -189,7 +192,7 @@ export default function BlogPage() {
         </div>
       </nav>
 
-      <main className="relative z-0 pb-24 pt-[128px] md:pt-[140px]">
+      <main className="relative z-0 pb-24 pt-40 md:pt-52">
         <div className="container mx-auto px-6">
           {/* Header */}
           <header className="mb-12 md:mb-14">
