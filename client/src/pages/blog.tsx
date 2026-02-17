@@ -62,11 +62,11 @@ export default function BlogPage() {
       >
         <div className="w-full max-w-[1920px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between gap-6">
           <Link href="/">
-            <a className="shrink-0" data-testid="link-nav-logo">
+            <a className="shrink-0 flex items-center -mt-6 md:-mt-8 -mb-4 md:-mb-6" data-testid="link-nav-logo">
               <img
                 src="/logo-header.png"
                 alt="Chohan"
-                className="h-9 md:h-10 w-auto"
+                className="h-16 md:h-20 w-auto"
                 data-testid="img-nav-logo"
               />
             </a>

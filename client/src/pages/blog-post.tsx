@@ -145,8 +145,8 @@ export default function BlogPostPage() {
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-6 md:px-12 py-4">
           <Link href="/">
-            <a className="shrink-0" data-testid="link-blog-post-logo">
-              <img src="/logo-header.png" alt="Chohan" className="h-9 md:h-10 w-auto" data-testid="img-blog-post-logo" />
+            <a className="shrink-0 flex items-center -mt-6 md:-mt-8 -mb-4 md:-mb-6" data-testid="link-blog-post-logo">
+              <img src="/logo-header.png" alt="Chohan" className="h-16 md:h-20 w-auto" data-testid="img-blog-post-logo" />
             </a>
           </Link>
 
