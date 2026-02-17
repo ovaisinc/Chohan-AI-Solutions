@@ -441,16 +441,18 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-10 gap-y-8 items-center mb-8">
+                  <div className="grid grid-cols-2 sm:grid-cols-6 gap-x-10 gap-y-8 items-center mb-8">
                     {[
                       { src: "/logo-kraft.png", alt: "Kraft" },
-                      { src: "/assets/images/logos/abbvie.png", alt: "AbbVie" },
                       { src: "/assets/images/logos/citgo.png", alt: "CITGO" },
                       { src: "/assets/images/logos/mckesson.png", alt: "McKesson" },
                       { src: "/assets/images/logos/face.png", alt: "Face Amusement" },
                       { src: "/assets/images/logos/adtime.png", alt: "Adtime Marketing" },
-                    ].map((logo) => (
-                      <div key={logo.alt} className="flex items-center justify-center">
+                    ].map((logo, index) => (
+                      <div
+                        key={logo.alt}
+                        className={`flex items-center justify-center ${index < 3 ? "sm:col-span-2" : "sm:col-span-3"}`}
+                      >
                         <img
                           src={logo.src}
                           alt={logo.alt}
