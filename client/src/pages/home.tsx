@@ -441,20 +441,15 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-10 gap-y-8 items-center mb-8">
+                  <div className="grid grid-cols-1 gap-x-10 gap-y-8 items-center mb-8">
                     {[
                       { src: "/logo-kraft.png", alt: "Kraft" },
-                      { src: "/assets/images/logos/citgo.png", alt: "CITGO" },
-                      { src: "/assets/images/logos/abbvie.png", alt: "AbbVie" },
-                      { src: "/assets/images/logos/mckesson.png", alt: "McKesson" },
-                      { src: "/assets/images/logos/face.png", alt: "Face Amusement" },
-                      { src: "/assets/images/logos/adtime.png", alt: "Adtime Marketing" },
                     ].map((logo) => (
                       <div key={logo.alt} className="flex items-center justify-center">
                         <img
                           src={logo.src}
                           alt={logo.alt}
-                          className={`w-auto opacity-90 hover:opacity-100 transition-opacity duration-200 [filter:drop-shadow(0_0_18px_rgba(255,255,255,0.10))_grayscale(1)_brightness(1.8)] hover:[filter:drop-shadow(0_0_18px_rgba(255,255,255,0.10))_grayscale(0)_brightness(1)] ${logo.alt === "Adtime Marketing" ? "max-h-7 sm:max-h-9" : "max-h-10 sm:max-h-12"}`}
+                          className="w-auto max-h-10 sm:max-h-12 opacity-90 hover:opacity-100 transition-opacity duration-200 [filter:drop-shadow(0_0_18px_rgba(255,255,255,0.10))_grayscale(1)_brightness(1.8)] hover:[filter:drop-shadow(0_0_18px_rgba(255,255,255,0.10))_grayscale(0)_brightness(1)]"
                           loading="lazy"
                         />
                       </div>
