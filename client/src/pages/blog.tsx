@@ -69,7 +69,7 @@ export default function BlogPage() {
             <img
               src="/logo-left.png"
               alt="Chohan"
-              className="h-48 sm:h-56 md:h-[22rem] w-auto max-w-[70vw] object-contain"
+              className="h-24 sm:h-28 md:h-44 w-auto max-w-[70vw] object-contain"
               data-testid="img-left-logo"
             />
           </a>

@@ -146,7 +146,7 @@ export default function BlogPostPage() {
         <div className="relative mx-auto flex w-full max-w-[1920px] items-center justify-end px-6 md:px-12 py-4">
           <Link href="/">
             <a className="absolute left-1/2 top-2 -translate-x-1/2 shrink-0 flex items-center" data-testid="link-blog-post-logo">
-              <img src="/logo-left.png" alt="Chohan" className="h-48 sm:h-56 md:h-[22rem] w-auto max-w-[70vw] object-contain" data-testid="img-blog-post-logo" />
+              <img src="/logo-left.png" alt="Chohan" className="h-24 sm:h-28 md:h-44 w-auto max-w-[70vw] object-contain" data-testid="img-blog-post-logo" />
             </a>
           </Link>
 
