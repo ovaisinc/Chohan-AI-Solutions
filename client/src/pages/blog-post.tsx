@@ -1,15 +1,14 @@
 import { Link, useRoute } from "wouter";
 import { useEffect, Fragment } from "react";
 import { blogPosts, blogPostsBySlug } from "@/data/blog";
-import { ArrowLeft, Calendar, Clock, Menu, Tag } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Clock, Menu, Tag } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 
 function formatDate(dateISO: string) {
   const d = new Date(dateISO + "T00:00:00");
   return d.toLocaleDateString(undefined, {
-    month: "short",
+    month: "long",
     day: "numeric",
     year: "numeric",
   });
@@ -23,9 +22,17 @@ function renderMarkdown(content: string) {
 
   const flushParagraph = () => {
     if (!paragraph.length) return;
+    const text = paragraph.join(" ");
+    // Handle bold text within paragraphs
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
     blocks.push(
-      <p key={`p-${blocks.length}`} className="text-gray-300 leading-relaxed">
-        {paragraph.join(" ")}
+      <p key={`p-${blocks.length}`} className="text-white/70 leading-[1.8] text-[17px]">
+        {parts.map((part, i) => {
+          if (part.startsWith("**") && part.endsWith("**")) {
+            return <strong key={i} className="text-white font-semibold">{part.slice(2, -2)}</strong>;
+          }
+          return part;
+        })}
       </p>,
     );
     paragraph = [];
@@ -34,10 +41,24 @@ function renderMarkdown(content: string) {
   const flushBullets = () => {
     if (!bullets.length) return;
     blocks.push(
-      <ul key={`ul-${blocks.length}`} className="space-y-2 pl-5 list-disc text-gray-300">
-        {bullets.map((item, idx) => (
-          <li key={idx}>{item}</li>
-        ))}
+      <ul key={`ul-${blocks.length}`} className="space-y-3 pl-0 text-white/70 text-[17px] leading-[1.8]">
+        {bullets.map((item, idx) => {
+          // Handle bold text in bullet items
+          const parts = item.split(/(\*\*[^*]+\*\*)/g);
+          return (
+            <li key={idx} className="flex gap-3">
+              <span className="mt-[11px] h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+              <span>
+                {parts.map((part, i) => {
+                  if (part.startsWith("**") && part.endsWith("**")) {
+                    return <strong key={i} className="text-white font-semibold">{part.slice(2, -2)}</strong>;
+                  }
+                  return part;
+                })}
+              </span>
+            </li>
+          );
+        })}
       </ul>,
     );
     bullets = [];
@@ -56,7 +77,7 @@ function renderMarkdown(content: string) {
       flushParagraph();
       flushBullets();
       blocks.push(
-        <h2 key={`h2-${idx}`} className="text-2xl font-display font-bold text-white pt-3">
+        <h2 key={`h2-${idx}`} className="text-2xl font-display font-bold text-white pt-6 pb-1">
           {line.replace("## ", "")}
         </h2>,
       );
@@ -67,7 +88,7 @@ function renderMarkdown(content: string) {
       flushParagraph();
       flushBullets();
       blocks.push(
-        <h3 key={`h3-${idx}`} className="text-xl font-display font-semibold text-white pt-2">
+        <h3 key={`h3-${idx}`} className="text-xl font-display font-semibold text-white pt-4 pb-1">
           {line.replace("### ", "")}
         </h3>,
       );
@@ -100,15 +121,15 @@ export default function BlogPostPage() {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-background text-foreground flex items-center justify-center px-6">
-        <div className="max-w-lg w-full rounded-2xl border border-white/10 bg-black/30 p-8">
-          <h1 className="text-2xl font-display font-bold">Post not found</h1>
-          <p className="text-gray-400 mt-2">This article may have moved. Browse the full blog archive.</p>
+      <div className="min-h-screen bg-[#090b10] text-white flex items-center justify-center px-6">
+        <div className="max-w-lg w-full text-center">
+          <h1 className="text-3xl font-display font-bold">Article not found</h1>
+          <p className="text-white/50 mt-3">This article may have been moved or removed.</p>
           <Link href="/blog">
-            <a className="inline-flex items-center mt-6 text-sm font-medium text-white/80 hover:text-white transition-colors">
+            <Button className="mt-8 rounded-full bg-white px-6 text-black hover:bg-gray-200">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Blog
-            </a>
+              Back to Insights
+            </Button>
           </Link>
         </div>
       </div>
@@ -121,24 +142,31 @@ export default function BlogPostPage() {
     .slice(0, 2);
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary selection:text-white">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
-        <div className="w-full max-w-[1920px] mx-auto pl-2 pr-6 md:px-12 pt-4 pb-2 flex items-start justify-between">
+    <div className="min-h-screen bg-[#090b10] text-white overflow-x-hidden selection:bg-primary selection:text-white">
+      {/* Navigation */}
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-[#090b10]/95 backdrop-blur-md">
+        <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/">
-            <a className="flex items-center gap-2 -mt-20 md:-mt-24 -mb-10 md:-mb-20">
-              <img src="/logo-header.png" alt="Chohan" className="h-16 md:h-20 w-auto" />
+            <a className="flex items-center">
+              <img
+                src="/logo-header.png"
+                alt="Chohan"
+                className="h-10 w-auto md:h-12"
+              />
               <span className="sr-only">Chohan</span>
             </a>
           </Link>
 
-          <div className="hidden md:flex items-center space-x-8 mt-4">
-            <a href="/#services" className="text-sm font-medium hover:text-primary transition-colors">Services</a>
-            <a href="/#process" className="text-sm font-medium hover:text-primary transition-colors">Process</a>
-            <a href="/#results" className="text-sm font-medium hover:text-primary transition-colors">Results</a>
-            <Link href="/insights"><span className="text-sm font-medium hover:text-primary transition-colors">Case Studies</span></Link>
+          <nav className="hidden items-center gap-7 md:flex">
+            <a href="/#services" className="text-sm font-medium text-white/80 transition-colors hover:text-white">Services</a>
+            <a href="/#process" className="text-sm font-medium text-white/80 transition-colors hover:text-white">Process</a>
+            <a href="/#results" className="text-sm font-medium text-white/80 transition-colors hover:text-white">Results</a>
+            <Link href="/insights"><span className="text-sm font-medium text-white/80 transition-colors hover:text-white">Case Studies</span></Link>
             <Link href="/blog"><span className="text-sm font-medium text-white">Blog</span></Link>
-            <Link href="/contact"><Button className="bg-white text-black hover:bg-gray-200 rounded-full px-6">Contact Us</Button></Link>
-          </div>
+            <Link href="/contact">
+              <Button className="rounded-full bg-white px-6 text-black hover:bg-gray-200">Contact Us</Button>
+            </Link>
+          </nav>
 
           <div className="md:hidden">
             <Sheet>
@@ -147,90 +175,195 @@ export default function BlogPostPage() {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-background border-white/10 w-[300px]">
-                <div className="flex flex-col space-y-8 mt-10">
-                  <a href="/#services" className="text-lg font-medium text-left hover:text-primary transition-colors">Services</a>
-                  <a href="/#process" className="text-lg font-medium text-left hover:text-primary transition-colors">Process</a>
-                  <a href="/#results" className="text-lg font-medium text-left hover:text-primary transition-colors">Results</a>
-                  <Link href="/insights"><span className="text-lg font-medium text-left hover:text-primary transition-colors">Case Studies</span></Link>
-                  <Link href="/blog"><span className="text-lg font-medium text-left text-white">Blog</span></Link>
-                  <Link href="/contact"><Button className="bg-primary text-white hover:bg-primary/90 rounded-full w-full">Contact Us</Button></Link>
+              <SheetContent side="right" className="w-[300px] border-white/10 bg-[#090b10]">
+                <div className="mt-10 flex flex-col space-y-8">
+                  <a href="/#services" className="text-left text-lg font-medium transition-colors hover:text-primary">Services</a>
+                  <a href="/#process" className="text-left text-lg font-medium transition-colors hover:text-primary">Process</a>
+                  <a href="/#results" className="text-left text-lg font-medium transition-colors hover:text-primary">Results</a>
+                  <Link href="/insights"><span className="text-left text-lg font-medium transition-colors hover:text-primary">Case Studies</span></Link>
+                  <Link href="/blog"><span className="text-left text-lg font-medium text-white">Blog</span></Link>
+                  <Link href="/contact">
+                    <Button className="w-full rounded-full bg-primary text-white hover:bg-primary/90">Contact Us</Button>
+                  </Link>
                 </div>
               </SheetContent>
             </Sheet>
           </div>
         </div>
-      </nav>
+      </header>
 
-      <section className="relative pt-24 md:pt-28 pb-16 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(90,158,217,0.18),transparent_55%),radial-gradient(circle_at_80%_10%,rgba(7,41,93,0.45),transparent_55%)]" />
-        </div>
+      <main className="relative z-0 pb-24 pt-28 md:pt-36">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mx-auto">
-            <Link href="/blog">
-              <a className="inline-flex items-center text-sm font-medium text-white/80 hover:text-white transition-colors">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to blog
-              </a>
-            </Link>
+          {/* Back Link */}
+          <Link href="/blog">
+            <a className="inline-flex items-center text-sm font-medium text-white/50 hover:text-white transition-colors mb-10">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Insights
+            </a>
+          </Link>
 
-            <h1 className="mt-6 text-4xl md:text-5xl font-display font-bold leading-tight">{post.title}</h1>
-
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-2 text-xs text-gray-400 bg-white/5 border border-white/10 rounded-full px-3 py-1.5">
-                <Calendar className="h-4 w-4" />
-                {formatDate(post.date)}
-              </span>
-              <span className="inline-flex items-center gap-2 text-xs text-gray-400 bg-white/5 border border-white/10 rounded-full px-3 py-1.5">
-                <Clock className="h-4 w-4" />
-                {post.readTime} min read
-              </span>
-              <span className="inline-flex items-center gap-2 text-xs text-gray-400 bg-white/5 border border-white/10 rounded-full px-3 py-1.5">
-                <Tag className="h-4 w-4" />
+          {/* Article Header */}
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">
                 {post.category}
+              </span>
+              <span className="h-1 w-1 rounded-full bg-white/30" />
+              <span className="text-xs text-white/40">
+                {post.readTime} min read
               </span>
             </div>
 
-            <p className="mt-4 text-sm text-white/70">By {post.author}</p>
+            <h1 className="text-4xl font-display font-bold leading-[1.1] md:text-5xl lg:text-[3.25rem]">
+              {post.title}
+            </h1>
 
-            <article className="mt-10 space-y-6 text-base rounded-2xl border border-white/10 bg-black/30 p-6 md:p-8">
+            <p className="mt-6 text-lg text-white/55 leading-relaxed">
+              {post.excerpt}
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-5 text-sm text-white/45">
+              <span className="inline-flex items-center gap-1.5">
+                <Calendar className="h-3.5 w-3.5" />
+                {formatDate(post.date)}
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Clock className="h-3.5 w-3.5" />
+                {post.readTime} min read
+              </span>
+              <span className="text-white/40">
+                By {post.author}
+              </span>
+            </div>
+          </div>
+
+          {/* Hero Image */}
+          <div className="mt-12 aspect-[21/9] w-full overflow-hidden rounded-sm">
+            <img
+              src={post.heroImage}
+              alt={post.title}
+              className="h-full w-full object-cover"
+              loading="eager"
+            />
+          </div>
+
+          {/* Article Content */}
+          <div className="mt-16 grid grid-cols-1 gap-16 lg:grid-cols-[1fr_280px]">
+            {/* Main Content */}
+            <article className="max-w-3xl space-y-5">
               {renderMarkdown(post.content)}
             </article>
 
-            <div className="mt-8 flex flex-wrap gap-2">
+            {/* Sidebar */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-28">
+                {/* Tags */}
+                <div className="mb-10">
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40 mb-4">
+                    Topics
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {post.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="inline-flex text-xs text-white/60 border border-white/10 rounded-full px-3 py-1.5 hover:border-white/20 transition-colors"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTA */}
+                <div className="border-t border-white/10 pt-8">
+                  <p className="text-sm font-display font-semibold text-white mb-2">
+                    Need help with AI strategy?
+                  </p>
+                  <p className="text-xs text-white/45 leading-relaxed mb-5">
+                    We help leadership teams design and implement AI initiatives that deliver measurable results.
+                  </p>
+                  <Link href="/contact">
+                    <Button className="w-full rounded-full bg-white px-6 text-sm text-black hover:bg-gray-200">
+                      Get in Touch
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          {/* Mobile Tags */}
+          <div className="mt-12 lg:hidden">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-white/40 mb-4">
+              Topics
+            </p>
+            <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
-                <span key={tag} className="inline-flex items-center text-xs text-white/80 bg-white/10 border border-white/10 rounded-full px-3 py-1.5">
+                <span
+                  key={tag}
+                  className="inline-flex text-xs text-white/60 border border-white/10 rounded-full px-3 py-1.5"
+                >
                   {tag}
                 </span>
               ))}
             </div>
-
-            {relatedPosts.length > 0 && (
-              <div className="mt-12">
-                <h2 className="text-xl font-display font-bold">Related posts</h2>
-                <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {relatedPosts.map((related) => (
-                    <Link key={related.slug} href={`/blog/${related.slug}`}>
-                      <a>
-                        <Card className="border-white/10 bg-black/30 hover:border-primary/30 transition-colors">
-                          <CardContent className="p-5">
-                            <p className="text-[10px] uppercase tracking-wider text-white/50">{related.category}</p>
-                            <h3 className="mt-2 text-base font-semibold text-white">{related.title}</h3>
-                            <p className="mt-2 text-sm text-gray-400 line-clamp-2">{related.excerpt}</p>
-                          </CardContent>
-                        </Card>
-                      </a>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
+
+          {/* Related Articles */}
+          {relatedPosts.length > 0 && (
+            <section className="mt-24 border-t border-white/10 pt-16">
+              <h2 className="text-xl font-display font-semibold mb-10">Related Articles</h2>
+              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                {relatedPosts.map((related) => (
+                  <Link key={related.slug} href={`/blog/${related.slug}`}>
+                    <a className="group block">
+                      <div className="grid grid-cols-[1fr] gap-5 sm:grid-cols-[200px_1fr] items-start">
+                        <div className="aspect-[16/10] w-full overflow-hidden rounded-sm">
+                          <img
+                            src={related.heroImage}
+                            alt={related.title}
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div>
+                          <span className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">
+                            {related.category}
+                          </span>
+                          <h3 className="mt-2 text-base font-display font-semibold leading-snug transition-colors group-hover:text-primary">
+                            {related.title}
+                          </h3>
+                          <p className="mt-2 text-sm text-white/45 line-clamp-2">{related.excerpt}</p>
+                        </div>
+                      </div>
+                    </a>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Bottom CTA (mobile) */}
+          <section className="mt-20 border-t border-white/10 pt-16 lg:hidden">
+            <h3 className="text-2xl font-display font-bold">
+              Ready to put AI to work?
+            </h3>
+            <p className="mt-4 text-base text-white/55 leading-relaxed">
+              We help leadership teams design, implement, and scale AI initiatives that deliver measurable business outcomes.
+            </p>
+            <div className="mt-8">
+              <Link href="/contact">
+                <Button className="rounded-full bg-white px-8 py-3 text-sm font-medium text-black hover:bg-gray-200">
+                  Schedule a Consultation
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+          </section>
+
         </div>
-      </section>
+      </main>
     </div>
   );
 }
