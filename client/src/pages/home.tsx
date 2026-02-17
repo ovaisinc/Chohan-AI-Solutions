@@ -645,7 +645,7 @@ export default function Home() {
 
             <div className="flex space-x-8">
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/chohan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
