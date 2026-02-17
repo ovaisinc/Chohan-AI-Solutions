@@ -69,7 +69,7 @@ export default function BlogPage() {
             <img
               src="/logo-left.png"
               alt="Chohan"
-              className="h-24 sm:h-28 md:h-44 w-auto max-w-[70vw] object-contain"
+              className="h-48 sm:h-56 md:h-[22rem] w-auto max-w-[70vw] object-contain"
               data-testid="img-left-logo"
             />
           </a>
@@ -191,7 +191,7 @@ export default function BlogPage() {
         </div>
       </nav>
 
-      <main className="relative z-0 pb-24 pt-40 md:pt-52">
+      <main className="relative z-0 pb-24 pt-64 md:pt-[25rem]">
         <div className="container mx-auto px-6">
           {/* Header */}
           <header className="mb-12 md:mb-14">
