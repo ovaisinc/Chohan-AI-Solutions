@@ -140,47 +140,43 @@ export default function BlogPostPage() {
     .slice(0, 2);
 
   return (
-    <div className="min-h-screen bg-[#090b10] text-white overflow-x-hidden selection:bg-primary selection:text-white">
+    <div className="min-h-screen bg-background text-white overflow-x-hidden selection:bg-primary selection:text-white">
       {/* Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.06] bg-[#090b10]/80 backdrop-blur-xl">
-        <div className="mx-auto flex h-[72px] w-full max-w-[1200px] items-center justify-between px-6 lg:px-8">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-background/80 backdrop-blur-md">
+        <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between px-6 md:px-12 py-4">
           <Link href="/">
-            <a className="flex items-center">
-              <img
-                src="/logo.svg"
-                alt="Chohan"
-                className="h-7 w-auto md:h-8"
-              />
+            <a className="shrink-0" data-testid="link-blog-post-logo">
+              <img src="/logo-header.png" alt="Chohan" className="h-9 md:h-10 w-auto" data-testid="img-blog-post-logo" />
             </a>
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
-            <a href="/#services" className="text-[13px] font-medium text-white/55 tracking-wide transition-colors duration-200 hover:text-white">Services</a>
-            <a href="/#process" className="text-[13px] font-medium text-white/55 tracking-wide transition-colors duration-200 hover:text-white">Process</a>
-            <a href="/#results" className="text-[13px] font-medium text-white/55 tracking-wide transition-colors duration-200 hover:text-white">Results</a>
-            <Link href="/insights"><span className="text-[13px] font-medium text-white/55 tracking-wide transition-colors duration-200 hover:text-white">Case Studies</span></Link>
-            <Link href="/blog"><span className="text-[13px] font-medium text-white tracking-wide">Blog</span></Link>
+            <a href="/#services" className="text-sm font-medium hover:text-primary transition-colors">Services</a>
+            <a href="/#process" className="text-sm font-medium hover:text-primary transition-colors">Process</a>
+            <a href="/#results" className="text-sm font-medium hover:text-primary transition-colors">Results</a>
+            <Link href="/insights"><span className="text-sm font-medium hover:text-primary transition-colors">Case Studies</span></Link>
+            <Link href="/blog"><span className="text-sm font-medium text-white">Blog</span></Link>
             <Link href="/contact">
-              <Button className="rounded-full bg-white px-5 py-2 text-[13px] font-medium text-black hover:bg-white/90 transition-colors duration-200">Contact Us</Button>
+              <Button className="bg-white text-black hover:bg-gray-200 rounded-full px-6">Contact Us</Button>
             </Link>
           </nav>
 
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-white">
-                  <Menu className="h-5 w-5" />
+                <Button variant="ghost" size="icon" className="text-white rounded-full border border-white/10 bg-black/20 hover:bg-black/30">
+                  <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] border-white/[0.06] bg-[#090b10]">
-                <div className="mt-12 flex flex-col space-y-7">
-                  <a href="/#services" className="text-[15px] font-medium text-white/70 transition-colors hover:text-white">Services</a>
-                  <a href="/#process" className="text-[15px] font-medium text-white/70 transition-colors hover:text-white">Process</a>
-                  <a href="/#results" className="text-[15px] font-medium text-white/70 transition-colors hover:text-white">Results</a>
-                  <Link href="/insights"><span className="text-[15px] font-medium text-white/70 transition-colors hover:text-white">Case Studies</span></Link>
-                  <Link href="/blog"><span className="text-[15px] font-medium text-white">Blog</span></Link>
+              <SheetContent side="right" className="bg-background border-white/10 w-[300px]">
+                <div className="mt-10 flex flex-col space-y-8">
+                  <a href="/#services" className="text-lg font-medium text-left hover:text-primary transition-colors">Services</a>
+                  <a href="/#process" className="text-lg font-medium text-left hover:text-primary transition-colors">Process</a>
+                  <a href="/#results" className="text-lg font-medium text-left hover:text-primary transition-colors">Results</a>
+                  <Link href="/insights"><span className="text-lg font-medium text-left hover:text-primary transition-colors">Case Studies</span></Link>
+                  <Link href="/blog"><span className="text-lg font-medium text-left text-white">Blog</span></Link>
                   <Link href="/contact">
-                    <Button className="w-full rounded-full bg-white text-black hover:bg-white/90 mt-2">Contact Us</Button>
+                    <Button className="bg-primary text-white hover:bg-primary/90 rounded-full w-full">Contact Us</Button>
                   </Link>
                 </div>
               </SheetContent>
