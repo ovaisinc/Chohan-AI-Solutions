@@ -62,11 +62,11 @@ export default function BlogPage() {
       >
         <div className="w-full max-w-[1920px] mx-auto px-6 md:px-12 py-4 flex items-center justify-between gap-6">
           <Link href="/">
-            <a className="shrink-0 flex items-center -mt-6 md:-mt-8 -mb-4 md:-mb-6" data-testid="link-nav-logo">
+            <a className="shrink-0 flex items-center" data-testid="link-nav-logo">
               <img
-                src="/logo-header.png"
+                src="/logo-left.png"
                 alt="Chohan"
-                className="h-16 md:h-20 w-auto"
+                className="h-14 md:h-16 w-auto bg-transparent"
                 data-testid="img-nav-logo"
               />
             </a>
@@ -189,7 +189,7 @@ export default function BlogPage() {
         </div>
       </nav>
 
-      <main className="relative z-0 pb-24 pt-[112px] md:pt-[124px]">
+      <main className="relative z-0 pb-24 pt-[128px] md:pt-[140px]">
         <div className="container mx-auto px-6">
           {/* Header */}
           <header className="mb-12 md:mb-14">
