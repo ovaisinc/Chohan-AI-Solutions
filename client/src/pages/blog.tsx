@@ -43,12 +43,11 @@ export default function BlogPage() {
           <Link href="/">
             <a className="flex items-center" data-testid="link-blog-logo">
               <img
-                src="/logo-header.png"
+                src="/logo.svg"
                 alt="Chohan"
-                className="h-9 w-auto md:h-10"
+                className="h-7 w-auto md:h-8"
                 data-testid="img-blog-logo"
               />
-              <span className="sr-only">Chohan</span>
             </a>
           </Link>
 
@@ -91,7 +90,7 @@ export default function BlogPage() {
         <div className="mx-auto w-full max-w-[1200px] px-6 lg:px-8">
 
           {/* Page Header */}
-          <header className="mb-20 md:mb-24">
+          <header className="mb-16 md:mb-20">
             <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-white/35 mb-5">
               Insights & Perspectives
             </p>
@@ -103,24 +102,15 @@ export default function BlogPage() {
             </p>
           </header>
 
-          {/* Featured Article */}
+          {/* Featured Article — text-dominant layout */}
           {featuredPost && activeCategory === "All" && (
-            <section className="mb-24">
+            <section className="mb-20 border-t border-white/[0.06] pt-10">
               <Link href={`/blog/${featuredPost.slug}`}>
                 <a className="group block">
-                  <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16 items-start">
-                    {/* Image */}
-                    <div className="relative aspect-[3/2] w-full overflow-hidden rounded-[3px]">
-                      <img
-                        src={featuredPost.heroImage}
-                        alt={featuredPost.title}
-                        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                        loading="eager"
-                      />
-                    </div>
-                    {/* Content */}
-                    <div className="flex flex-col justify-center lg:py-4">
-                      <div className="flex items-center gap-3 mb-6">
+                  <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_380px] lg:gap-14 items-start">
+                    {/* Content — left, text-first */}
+                    <div className="flex flex-col justify-center order-2 lg:order-1">
+                      <div className="flex items-center gap-3 mb-5">
                         <span className="inline-block text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/90">
                           Featured
                         </span>
@@ -129,13 +119,13 @@ export default function BlogPage() {
                           {featuredPost.category}
                         </span>
                       </div>
-                      <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-display font-bold leading-[1.15] tracking-[-0.01em] group-hover:text-primary/90 transition-colors duration-300">
+                      <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-display font-bold leading-[1.2] tracking-[-0.01em] group-hover:text-primary/90 transition-colors duration-300">
                         {featuredPost.title}
                       </h2>
-                      <p className="mt-5 text-[15px] leading-[1.75] text-white/45 line-clamp-3">
+                      <p className="mt-4 text-[15px] leading-[1.75] text-white/45 line-clamp-3">
                         {featuredPost.excerpt}
                       </p>
-                      <div className="mt-8 flex items-center gap-6 text-[12px] text-white/30">
+                      <div className="mt-6 flex items-center gap-6 text-[12px] text-white/30">
                         <span className="inline-flex items-center gap-1.5">
                           <Calendar className="h-3 w-3" />
                           {formatDate(featuredPost.date)}
@@ -145,12 +135,21 @@ export default function BlogPage() {
                           {featuredPost.readTime} min read
                         </span>
                       </div>
-                      <div className="mt-10">
+                      <div className="mt-8">
                         <span className="inline-flex items-center text-[13px] font-medium text-white/70 group-hover:text-primary transition-colors duration-300">
                           Read article
                           <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1.5" />
                         </span>
                       </div>
+                    </div>
+                    {/* Image — right, contained */}
+                    <div className="relative aspect-[4/3] w-full max-w-[380px] overflow-hidden rounded-[3px] order-1 lg:order-2">
+                      <img
+                        src={featuredPost.heroImage}
+                        alt={featuredPost.title}
+                        className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                        loading="eager"
+                      />
                     </div>
                   </div>
                 </a>
@@ -187,11 +186,11 @@ export default function BlogPage() {
           {gridPosts.length > 0 && (
             <section>
               <div className="grid grid-cols-1 gap-x-8 gap-y-0 md:grid-cols-2 lg:grid-cols-3">
-                {gridPosts.map((post, index) => (
+                {gridPosts.map((post) => (
                   <Link key={post.slug} href={`/blog/${post.slug}`}>
-                    <a className="group block py-10 border-t border-white/[0.06] first:border-t-0 md:first:border-t md:[&:nth-child(-n+3)]:border-t-0 lg:[&:nth-child(-n+3)]:border-t-0">
+                    <a className="group block py-10 border-t border-white/[0.06]">
                       {/* Image */}
-                      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[3px] mb-6">
+                      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[3px] mb-5">
                         <img
                           src={post.heroImage}
                           alt={post.title}
@@ -236,7 +235,7 @@ export default function BlogPage() {
           )}
 
           {/* Bottom CTA */}
-          <section className="mt-32 border-t border-white/[0.06] pt-20">
+          <section className="mt-28 border-t border-white/[0.06] pt-16">
             <div className="max-w-lg">
               <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-white/25 mb-5">
                 Get Started

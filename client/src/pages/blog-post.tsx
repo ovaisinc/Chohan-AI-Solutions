@@ -147,11 +147,10 @@ export default function BlogPostPage() {
           <Link href="/">
             <a className="flex items-center">
               <img
-                src="/logo-header.png"
+                src="/logo.svg"
                 alt="Chohan"
-                className="h-9 w-auto md:h-10"
+                className="h-7 w-auto md:h-8"
               />
-              <span className="sr-only">Chohan</span>
             </a>
           </Link>
 
@@ -237,7 +236,7 @@ export default function BlogPostPage() {
           </div>
 
           {/* Hero Image */}
-          <div className="mt-14 aspect-[2.2/1] max-w-[920px] overflow-hidden rounded-[4px]">
+          <div className="mt-14 aspect-[2/1] max-w-[760px] overflow-hidden rounded-[4px]">
             <img
               src={post.heroImage}
               alt={post.title}
