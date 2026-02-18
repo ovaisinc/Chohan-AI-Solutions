@@ -14,6 +14,148 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     title:
+      "From Chatbots to Autonomous Agents: How Agentic AI Is Reshaping Business Operations",
+    slug: "chatbots-to-autonomous-agents-business-operations",
+    date: "2026-02-18",
+    author: "Chohan AI Editorial",
+    category: "AI Strategy",
+    excerpt:
+      "The AI landscape has shifted from reactive chatbots to proactive autonomous agents. Gartner projects 15% of daily work decisions will be made by AI agents by 2028. Here's what enterprises need to know about the agentic AI revolution.",
+    heroImage: "/blog-agentic-ai-2026-02-18.png",
+    readTime: 7,
+    tags: [
+      "agentic AI",
+      "autonomous agents",
+      "business automation",
+      "AI strategy",
+      "enterprise AI",
+      "workflow automation",
+    ],
+    content: `## From Reactive Bots to Proactive Operators
+
+For years, enterprise AI was largely synonymous with chatbots: systems that responded when prompted, answered FAQs, and handled narrow support tasks. Useful, yes—but fundamentally reactive.
+
+That era is ending.
+
+A new class of AI systems—**autonomous agents**—is moving AI from conversation to execution. Instead of waiting for prompts, agentic systems can monitor context, make bounded decisions, coordinate tools, and complete multi-step workflows with human oversight.
+
+According to Gartner, **15% of daily work decisions are expected to be made autonomously by AI agents by 2028**. For business leaders, this is not just a technology shift; it is an operating model shift.
+
+## Why Chatbots Were Not the End State
+
+Traditional chatbots were built to answer, not act. Their limitations are now well understood:
+
+- They rely on user prompts rather than operational triggers
+- They typically cannot persist memory across processes
+- They rarely execute end-to-end tasks across systems
+- They often lack planning depth for multi-step workflows
+
+In other words, they improve interaction—but not always outcomes.
+
+Autonomous agents close this gap by combining language intelligence with orchestration and decision support. The result is AI that can help run parts of the business, not just talk about them.
+
+## The Four Core Capabilities Behind Agentic AI
+
+The rise of agentic AI is powered by four capabilities that distinguish it from prior chatbot architectures.
+
+### 1) Memory
+
+Agents can retain relevant context over time—customer history, prior decisions, process state, and role-specific constraints. This enables continuity across sessions and reduces repetitive handoffs.
+
+### 2) Reasoning
+
+Modern agents can evaluate alternatives, apply logic chains, and align outputs to defined business rules. They are still bounded by model and data quality, but they are increasingly capable of structured decision support.
+
+### 3) Tool Use
+
+Agentic systems can invoke tools and enterprise systems directly: CRM, ERP, ticketing platforms, documentation repositories, analytics layers, and internal APIs. This is what converts "answers" into "actions."
+
+### 4) Planning
+
+Unlike single-turn chatbots, autonomous agents can break down complex goals into sequenced tasks, adapt when constraints change, and route exceptions to humans when confidence thresholds are not met.
+
+Together, these capabilities transform AI from an assistant into a workflow participant.
+
+## Real-World Business Use Cases Emerging Now
+
+Across industries, organizations are already deploying agentic AI in high-impact workflows.
+
+### Customer Operations
+
+Agents triage inbound requests, gather account context, propose resolutions, and trigger next-step actions before a human joins. Result: lower resolution time and better first-contact outcomes.
+
+### Revenue and Sales Ops
+
+Autonomous agents can enrich lead records, draft account plans, generate follow-up sequences, and flag pipeline risk patterns based on historical deal behavior.
+
+### Finance and Back Office
+
+In accounts payable and reconciliation workflows, agents can validate documents, match records, escalate exceptions, and prepare audit-ready logs.
+
+### IT and Internal Service Delivery
+
+Agentic workflows can classify incidents, execute standard remediation playbooks, and coordinate approvals across teams with clear governance controls.
+
+The common pattern: best results come from **narrowly scoped, repeatable workflows** where data, decisions, and outcomes are measurable.
+
+## A Practical Implementation Roadmap (Three Phases)
+
+Successful enterprise adoption usually follows a phased model.
+
+### Phase 1: Identify and Prioritize (0–30 days)
+
+- Select one to three workflows with clear bottlenecks
+- Baseline current performance (time, cost, error rate, escalation volume)
+- Define governance boundaries (autonomous actions vs human approvals)
+
+### Phase 2: Build and Integrate (31–60 days)
+
+- Configure task-specific agent behavior and prompts
+- Integrate required systems and data sources
+- Set confidence thresholds, fallback rules, and observability
+
+### Phase 3: Deploy and Scale (61–90 days)
+
+- Launch with limited blast radius
+- Monitor output quality, exception patterns, and business KPIs
+- Expand only after reliability and ROI are validated
+
+This phased approach avoids over-scaling too early and creates a repeatable playbook for broader rollout.
+
+## The 90-Day Pilot Approach That Works
+
+A strong 90-day pilot is not about proving AI is "interesting." It is about proving business impact under real operating conditions.
+
+A high-quality pilot should include:
+
+- **One clearly owned business process** (not a broad innovation sandbox)
+- **Defined success metrics** before implementation begins
+- **Human-in-the-loop controls** for high-risk decisions
+- **Weekly performance reviews** with cross-functional stakeholders
+- **A go/no-go scale decision** at day 90 based on measured outcomes
+
+When designed this way, a 90-day pilot becomes an execution accelerator, not a dead-end experiment.
+
+## What Enterprise Leaders Should Do Next
+
+To prepare for the agentic AI shift, leadership teams should act on three priorities now:
+
+1. **Choose workflows, not tools, as your starting point.**
+2. **Build governance into architecture from day one.**
+3. **Invest in operating readiness—ownership, training, and monitoring—not just model access.**
+
+The organizations that win in this next phase will not be those with the flashiest demos. They will be those that can deploy autonomous agents safely, measurably, and repeatedly across core operations.
+
+## Final Takeaway
+
+The move from chatbots to autonomous agents marks a fundamental step in enterprise AI maturity. With Gartner projecting 15% of daily work decisions to be made by AI agents by 2028, the question is no longer whether agentic AI will influence operations—it is how quickly organizations can implement it responsibly.
+
+The opportunity is real. So is the urgency.
+
+Now is the time to design your first production-grade agentic workflow, validate it through a disciplined 90-day pilot, and build the internal capabilities required to scale.`,
+  },
+  {
+    title:
       "The $3.5 Billion AI Lesson: What IBM's Agent Rollout Teaches Us About Automation",
     slug: "ibm-ai-agents-roi-enterprise-automation-lesson",
     date: "2026-02-17",
