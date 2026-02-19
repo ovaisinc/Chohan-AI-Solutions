@@ -152,11 +152,11 @@ export default function BlogPage() {
                         </div>
                       </div>
                       {/* Image side */}
-                      <div className="aspect-video md:aspect-auto overflow-hidden order-1 md:order-2">
+                      <div className="overflow-hidden order-1 md:order-2" style={{ aspectRatio: "16/9" }}>
                         <img
                           src={featuredPost.heroImage}
                           alt={featuredPost.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
                           loading="eager"
                         />
                       </div>
@@ -200,11 +200,11 @@ export default function BlogPage() {
                   <Link key={post.slug} href={`/blog/${post.slug}`}>
                     <a className="group block rounded-xl overflow-hidden border border-white/5 bg-white/[0.02] transition-all duration-300 hover:border-white/15 hover:bg-white/[0.05] hover:shadow-xl hover:-translate-y-1">
                       {/* Image */}
-                      <div className="aspect-video overflow-hidden">
+                      <div className="overflow-hidden" style={{ aspectRatio: "16/9" }}>
                         <img
                           src={post.heroImage}
                           alt={post.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-105"
                           loading="lazy"
                         />
                       </div>
