@@ -237,11 +237,11 @@ export default function BlogPostPage() {
           </div>
 
           {/* Hero Image */}
-          <div className="mt-14 w-full max-w-3xl overflow-hidden rounded-xl" style={{ aspectRatio: "16/9", maxHeight: "420px" }}>
+          <div className="mt-14 w-full max-w-3xl overflow-hidden rounded-xl bg-black/20" style={{ aspectRatio: "16/9" }}>
             <img
               src={post.heroImage}
               alt={post.title}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain object-center"
               loading="eager"
             />
           </div>
