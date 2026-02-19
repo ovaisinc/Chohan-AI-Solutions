@@ -160,7 +160,7 @@ Now is the time to design your first production-grade agentic workflow, validate
     slug: "ibm-ai-agents-roi-enterprise-automation-lesson",
     date: "2026-02-17",
     author: "Chohan AI Editorial",
-    category: "AI News",
+    category: "Industry Insights",
     excerpt:
       "IBM’s reported $3.5 billion in productivity-related savings—and internal claims of up to 50% productivity gains in targeted workflows—signal a clear shift in enterprise automation strategy. The real lesson is not just scale, but execution: tightly integrated AI agents, strong governance, and task-specific deployment models that deliver measurable AI agents ROI.",
     heroImage: "/hf_20260217_191606_ce5551de-bfc1-4b01-a12c-755a3c86f316.png",
@@ -348,7 +348,7 @@ If you are planning an AI rollout this quarter, Chohan AI Solutions can help you
     slug: "ai-automation-trends-executives-2026",
     date: "2026-02-17",
     author: "Chohan AI Editorial Team",
-    category: "AI News",
+    category: "Industry Insights",
     excerpt:
       "This week marks an inflection point for enterprise AI execution: agentic workflows are moving from pilot to production, voice AI is reshaping customer operations, and compliance automation is becoming a board-level priority. Here is what C-suite leaders should track now—and how to act before competitors do.",
     heroImage:
@@ -483,7 +483,7 @@ Contact Chohan AI Solutions for an executive-focused automation assessment. We�
     slug: "3-automation-mistakes-costing-you-10k-per-year",
     date: "2026-02-15",
     author: "Chohan AI Editorial Team",
-    category: "Business Tips",
+    category: "Best Practices",
     excerpt:
       "Most automation underperformance comes from operating model gaps, not software limitations. Over-automating unstable processes, ignoring exception paths, and skipping adoption planning can erode ROI and create avoidable execution risk.",
     heroImage:
@@ -515,7 +515,7 @@ Measure value through labor hours saved, quality improvements, and faster revenu
     slug: "why-most-ai-projects-fail-and-how-to-fix-it",
     date: "2026-02-10",
     author: "Chohan AI Editorial Team",
-    category: "Strategy",
+    category: "Best Practices",
     excerpt:
       "AI initiatives typically stall when strategy, data readiness, and accountability are not aligned from the start. A phased delivery model with measurable gates significantly improves implementation quality and long-term adoption.",
     heroImage:
@@ -556,7 +556,7 @@ Successful AI programs are built through disciplined execution and operating rig
     slug: "building-an-ai-ready-organization",
     date: "2026-02-07",
     author: "Chohan AI Editorial Team",
-    category: "Strategy",
+    category: "AI Strategy",
     excerpt:
       "AI readiness is not a technology problem—it is an organizational design challenge. Companies that align talent, data governance, and executive sponsorship before selecting tools consistently outperform those that lead with technology procurement.",
     heroImage:
@@ -604,7 +604,7 @@ Organizations that invest in readiness before deployment consistently achieve fa
     slug: "cfo-guide-measuring-ai-roi",
     date: "2026-02-03",
     author: "Chohan AI Editorial Team",
-    category: "Business Tips",
+    category: "Best Practices",
     excerpt:
       "Traditional ROI frameworks often fail to capture the full value of AI investments. Finance leaders need updated measurement approaches that account for efficiency gains, quality improvements, and strategic optionality alongside direct cost savings.",
     heroImage:
@@ -651,7 +651,7 @@ AI investments that are measured well get funded more consistently. Finance lead
     slug: "scaling-ai-pilot-to-production",
     date: "2026-01-28",
     author: "Chohan AI Editorial Team",
-    category: "Strategy",
+    category: "Best Practices",
     excerpt:
       "The transition from AI pilot to production deployment is where most initiatives fail. Success requires deliberate governance design, infrastructure planning, and operational ownership that pilots rarely demand.",
     heroImage:
