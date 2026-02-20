@@ -11,6 +11,7 @@ import {
   Lightbulb,
   Brain,
   Zap,
+  Landmark,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -288,12 +289,12 @@ export default function Home() {
               Strategic AI Implementation
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              We move beyond hype to deliver engineered value through three core
-              pillars.
+              From strategy to execution, we deliver five focused service lines
+              built to drive measurable operational performance.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
             <ServiceCard
               title="AI Strategy & Discovery"
               description="We audit your current workflows to identify high-impact automation opportunities before writing a single line of code."
@@ -313,6 +314,75 @@ export default function Home() {
               icon={Zap}
               delay={0.3}
             />
+            <ServiceCard
+              title="Data Analytics & Dashboards"
+              description="Decision-ready dashboards and KPI systems that unify data across operations, finance, and leadership reporting."
+              icon={CheckCircle}
+              delay={0.4}
+            />
+            <ServiceCard
+              title="Private Equity Automation"
+              description="Automating deal pipeline, CRM systems, portfolio monitoring, and reporting for modern PE teams."
+              icon={Landmark}
+              delay={0.5}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Private Equity Fund Automation Section */}
+      <section className="py-20 bg-white/2 border-y border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="inline-flex items-center text-[11px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1.5 rounded-full border border-primary/30 mb-4">
+                Specialized Offering
+              </span>
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+                Private Equity Fund Automation
+              </h2>
+              <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                We help PE funds modernize front-to-back operations with automation systems that improve deal velocity, portfolio visibility, and investor communications.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card className="glass border-white/10 bg-black/40">
+                <CardContent className="p-8">
+                  <h3 className="text-xl font-display font-bold mb-4 text-white">
+                    What We Do for PE Funds
+                  </h3>
+                  <ul className="space-y-3 text-sm text-gray-300">
+                    <li>• Deal pipeline automation (sourcing, screening, tracking)</li>
+                    <li>• CRM customization for investor relations</li>
+                    <li>• Portfolio company monitoring dashboards</li>
+                    <li>• Automated LP reporting and communications</li>
+                    <li>• Due diligence workflow automation</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="glass border-primary/30 bg-primary/5">
+                <CardContent className="p-8">
+                  <h3 className="text-xl font-display font-bold mb-4 text-white">
+                    Key Outcomes
+                  </h3>
+                  <div className="space-y-3 text-sm text-gray-200 mb-6">
+                    <p>• Faster deal sourcing and triage across fragmented channels</p>
+                    <p>• Better portfolio visibility with live operating dashboards</p>
+                    <p>• Automated LP reporting to reduce manual quarterly prep</p>
+                  </div>
+                  <div className="border border-white/10 rounded-lg p-4 bg-black/30">
+                    <p className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
+                      Case Study Placeholder
+                    </p>
+                    <p className="text-sm text-gray-400">
+                      Add client story: how a mid-market PE fund reduced deal screening time and improved LP reporting turnaround with custom automation.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
