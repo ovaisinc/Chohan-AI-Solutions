@@ -372,14 +372,19 @@ export default function Home() {
                     <p>• Better portfolio visibility with live operating dashboards</p>
                     <p>• Automated LP reporting to reduce manual quarterly prep</p>
                   </div>
-                  <div className="border border-white/10 rounded-lg p-4 bg-black/30">
-                    <p className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
-                      Case Study Placeholder
-                    </p>
-                    <p className="text-sm text-gray-400">
-                      Add client story: how a mid-market PE fund reduced deal screening time and improved LP reporting turnaround with custom automation.
-                    </p>
-                  </div>
+                  <Link href="/insights/northgate-capital-case-study">
+                    <a className="block border border-white/10 rounded-lg p-4 bg-black/30 hover:border-primary/40 transition-colors" data-testid="link-pe-case-study-northgate">
+                      <p className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
+                        February 1, 2026
+                      </p>
+                      <p className="text-sm font-semibold text-white mb-2">
+                        Northgate Capital Partners: PE Automation Case Study
+                      </p>
+                      <p className="text-sm text-gray-400">
+                        60% reduction in deal sourcing time, real-time portfolio visibility across 12 companies, and a 90% reduction in LP reporting preparation.
+                      </p>
+                    </a>
+                  </Link>
                 </CardContent>
               </Card>
             </div>

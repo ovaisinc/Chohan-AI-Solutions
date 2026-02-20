@@ -14,6 +14,102 @@ export type InsightPost = {
 
 export const insights: InsightPost[] = [
   {
+    title: "Northgate Capital Partners: PE Automation Case Study",
+    slug: "northgate-capital-case-study",
+    date: "2026-02-01",
+    category: "Case Study",
+    summary:
+      "A $500M AUM mid-market private equity firm replaced manual sourcing, fragmented portfolio tracking, and labor-intensive LP reporting with an integrated automation stack—cutting sourcing time by 60% and LP report prep by 90%.",
+    coverLabel: "Private Equity",
+    readTimeMinutes: 8,
+    heroImageUrl:
+      "https://images.unsplash.com/photo-1553729784-e91953dec042?auto=format&fit=crop&w=1600&q=80",
+    heroImageAlt: "Private equity team reviewing investment dashboards and portfolio performance",
+    highlights: [
+      "60% reduction in deal sourcing and initial screening time",
+      "Real-time portfolio visibility across 12 portfolio companies",
+      "90% reduction in LP reporting preparation time",
+    ],
+    content: `1) Client Background
+Northgate Capital Partners is a fictional mid-market private equity firm with approximately $500M in assets under management. The firm focuses on control and significant minority investments in business services, industrial technology, and healthcare-adjacent businesses in the lower middle market. Northgate manages 12 active portfolio companies and runs a lean operating model, where investment professionals and operating partners share responsibility for sourcing, diligence, portfolio oversight, and LP communications.
+
+As deal flow increased, leadership recognized that their operating cadence had not scaled with fund complexity. Core investment decisions were still strong, but execution speed was increasingly constrained by fragmented systems and manual workflows.
+
+2) The Challenge
+Northgate’s front-to-back process relied on disconnected tools and manual handoffs. Inbound opportunities were tracked across banker emails, analyst spreadsheets, and ad hoc notes. There was no unified deal pipeline with standardized qualification criteria, which made triage inconsistent and reporting dependent on weekly manual updates.
+
+Portfolio monitoring had similar issues. Operating metrics from 12 portfolio companies arrived in different formats and at different intervals, requiring manual normalization before they could be used for board-level or IC-level analysis. This created lag between performance shifts and management response.
+
+LP reporting was the largest recurring burden. Quarterly reporting required a coordinated effort across investment, finance, and investor relations teams to aggregate portfolio data, draft commentary, and format materials. Preparation routinely consumed several days of senior team time, increasing risk of delays and limiting time available for value-creation work.
+
+Northgate defined four target outcomes for the engagement:
+• Reduce deal sourcing and screening cycle time
+• Create real-time visibility into portfolio performance
+• Compress LP reporting preparation effort
+• Accelerate due diligence without sacrificing quality or governance
+
+3) The Solution
+Chohan AI Solutions designed and implemented an integrated automation architecture spanning origination, portfolio operations, and investor reporting.
+
+Deal Flow CRM and Pipeline Automation
+We built a centralized deal pipeline CRM with structured stages, qualification rules, and automated routing. New opportunities from email, referral forms, and banker submissions were captured into a standardized intake model. The system automatically tagged deals by sector, size, geography, and strategic fit, then assigned workflows for analyst screening and partner review. Automated reminders and SLA alerts reduced stalled opportunities and improved handoff discipline.
+
+PowerBI Portfolio Intelligence Layer
+We implemented a portfolio performance layer in PowerBI that consolidated operating and financial data across all 12 portfolio companies. Standardized KPI schemas and automated data refreshes enabled real-time dashboards for growth, margin, cash conversion, and covenant tracking. Leadership views were tailored for investment committee reviews, while operating-partner views supported weekly portfolio interventions.
+
+Automated LP Reporting Workflow
+We built a reporting pipeline that automated data aggregation, validation checks, and draft report assembly. Quarterly LP packs now populate from governed data sources with pre-built templates for fund-level and company-level commentary. The workflow includes approval checkpoints, audit trails, and exception flags, reducing manual compilation and formatting effort while improving consistency and control.
+
+Due Diligence Acceleration Toolkit
+To support pre-close execution, we implemented a diligence workspace with automated document intake, checklist orchestration, and issue tracking. Teams could triage data room materials faster, surface missing information earlier, and coordinate findings across deal teams in a single environment.
+
+4) Implementation
+The program was delivered in a focused 4-week sprint with phased rollout:
+
+Week 1 — Diagnostic and architecture design
+• Mapped end-to-end workflows across sourcing, portfolio tracking, diligence, and LP reporting
+• Defined target-state operating model, KPI dictionary, and governance controls
+• Finalized integration blueprint and sprint backlog
+
+Week 2 — Build core systems
+• Configured deal pipeline CRM with stage gates and automation logic
+• Established PowerBI data model and baseline executive dashboards
+• Built LP reporting templates and data validation framework
+
+Week 3 — Integrations and pilot launch
+• Connected priority data sources and automated refresh jobs
+• Ran pilot across a subset of active deals and four portfolio companies
+• Refined workflows based on analyst and partner feedback
+
+Week 4 — Full rollout and enablement
+• Expanded dashboards to all 12 portfolio companies
+• Activated reporting automation for the upcoming LP cycle
+• Conducted role-based training and published SOPs for adoption
+
+This phased implementation minimized disruption to live deal activity while enabling measurable value within the first reporting cycle.
+
+5) Results & Impact
+Within the first quarter post-implementation, Northgate achieved significant operational gains:
+
+• 60% reduction in deal sourcing and initial screening time
+Automated intake, classification, and routing reduced manual triage and shortened time-to-first-decision for new opportunities.
+
+• Real-time portfolio visibility across 12 portfolio companies
+Leadership moved from delayed, spreadsheet-based snapshots to live KPI monitoring, improving intervention speed and portfolio governance.
+
+• 90% reduction in LP reporting preparation time
+What previously required multi-day cross-functional compilation was reduced to a controlled, mostly automated workflow with rapid review cycles.
+
+• 3x faster due diligence process
+Standardized checklists, centralized issue tracking, and automated document workflows accelerated pre-close execution and reduced coordination overhead.
+
+Beyond the headline metrics, Northgate reported improved forecasting confidence, better alignment between investment and operations teams, and a stronger ability to compete for attractive deals through faster response and tighter process control.
+
+6) Client Quote
+“Chohan helped us modernize the operating backbone of the firm without disrupting how we invest. We now evaluate opportunities faster, monitor portfolio performance in real time, and produce LP reporting with a level of speed and consistency we simply didn’t have before. The impact was immediate and measurable.”
+— Managing Director, Northgate Capital Partners`,
+  },
+  {
     title: "Party Bookings +48%",
     slug: "party-bookings-48",
     date: "2026-01-15",
