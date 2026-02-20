@@ -378,7 +378,7 @@ export default function Home() {
                         February 1, 2026
                       </p>
                       <p className="text-sm font-semibold text-white mb-2">
-                        Northgate Capital Partners: PE Automation Case Study
+                        Mid-Market PE Firm: Automation Case Study
                       </p>
                       <p className="text-sm text-gray-400">
                         60% reduction in deal sourcing time, real-time portfolio visibility across 12 companies, and a 90% reduction in LP reporting preparation.

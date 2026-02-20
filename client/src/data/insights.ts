@@ -14,12 +14,12 @@ export type InsightPost = {
 
 export const insights: InsightPost[] = [
   {
-    title: "Northgate Capital Partners: PE Automation Case Study",
-    slug: "northgate-capital-case-study",
+    title: "Mid-Market PE Firm: Automation Case Study",
+    slug: "mid-market-pe-firm-automation-case-study",
     date: "2026-02-01",
     category: "Case Study",
     summary:
-      "A $500M AUM mid-market private equity firm replaced manual sourcing, fragmented portfolio tracking, and labor-intensive LP reporting with an integrated automation stack—cutting sourcing time by 60% and LP report prep by 90%.",
+      "A $500M AUM mid-market private equity firm replaced manual sourcing, fragmented portfolio tracking, and labor-intensive LP reporting with an integrated automation stack-cutting sourcing time by 60% and LP report prep by 90%.",
     coverLabel: "Private Equity",
     readTimeMinutes: 8,
     heroImageUrl:
@@ -31,18 +31,18 @@ export const insights: InsightPost[] = [
       "90% reduction in LP reporting preparation time",
     ],
     content: `1) Client Background
-Northgate Capital Partners is a fictional mid-market private equity firm with approximately $500M in assets under management. The firm focuses on control and significant minority investments in business services, industrial technology, and healthcare-adjacent businesses in the lower middle market. Northgate manages 12 active portfolio companies and runs a lean operating model, where investment professionals and operating partners share responsibility for sourcing, diligence, portfolio oversight, and LP communications.
+A mid-market private equity firm with approximately $500M in assets under management. The firm focuses on control and significant minority investments in business services, industrial technology, and healthcare-adjacent businesses in the lower middle market. The firm manages 12 active portfolio companies and runs a lean operating model, where investment professionals and operating partners share responsibility for sourcing, diligence, portfolio oversight, and LP communications.
 
 As deal flow increased, leadership recognized that their operating cadence had not scaled with fund complexity. Core investment decisions were still strong, but execution speed was increasingly constrained by fragmented systems and manual workflows.
 
 2) The Challenge
-Northgate’s front-to-back process relied on disconnected tools and manual handoffs. Inbound opportunities were tracked across banker emails, analyst spreadsheets, and ad hoc notes. There was no unified deal pipeline with standardized qualification criteria, which made triage inconsistent and reporting dependent on weekly manual updates.
+The firm's front-to-back process relied on disconnected tools and manual handoffs. Inbound opportunities were tracked across banker emails, analyst spreadsheets, and ad hoc notes. There was no unified deal pipeline with standardized qualification criteria, which made triage inconsistent and reporting dependent on weekly manual updates.
 
 Portfolio monitoring had similar issues. Operating metrics from 12 portfolio companies arrived in different formats and at different intervals, requiring manual normalization before they could be used for board-level or IC-level analysis. This created lag between performance shifts and management response.
 
 LP reporting was the largest recurring burden. Quarterly reporting required a coordinated effort across investment, finance, and investor relations teams to aggregate portfolio data, draft commentary, and format materials. Preparation routinely consumed several days of senior team time, increasing risk of delays and limiting time available for value-creation work.
 
-Northgate defined four target outcomes for the engagement:
+The firm defined four target outcomes for the engagement:
 • Reduce deal sourcing and screening cycle time
 • Create real-time visibility into portfolio performance
 • Compress LP reporting preparation effort
@@ -66,22 +66,22 @@ To support pre-close execution, we implemented a diligence workspace with automa
 4) Implementation
 The program was delivered in a focused 4-week sprint with phased rollout:
 
-Week 1 — Diagnostic and architecture design
+Week 1 - Diagnostic and architecture design
 • Mapped end-to-end workflows across sourcing, portfolio tracking, diligence, and LP reporting
 • Defined target-state operating model, KPI dictionary, and governance controls
 • Finalized integration blueprint and sprint backlog
 
-Week 2 — Build core systems
+Week 2 - Build core systems
 • Configured deal pipeline CRM with stage gates and automation logic
 • Established PowerBI data model and baseline executive dashboards
 • Built LP reporting templates and data validation framework
 
-Week 3 — Integrations and pilot launch
+Week 3 - Integrations and pilot launch
 • Connected priority data sources and automated refresh jobs
 • Ran pilot across a subset of active deals and four portfolio companies
 • Refined workflows based on analyst and partner feedback
 
-Week 4 — Full rollout and enablement
+Week 4 - Full rollout and enablement
 • Expanded dashboards to all 12 portfolio companies
 • Activated reporting automation for the upcoming LP cycle
 • Conducted role-based training and published SOPs for adoption
@@ -89,7 +89,7 @@ Week 4 — Full rollout and enablement
 This phased implementation minimized disruption to live deal activity while enabling measurable value within the first reporting cycle.
 
 5) Results & Impact
-Within the first quarter post-implementation, Northgate achieved significant operational gains:
+Within the first quarter post-implementation, the firm achieved significant operational gains:
 
 • 60% reduction in deal sourcing and initial screening time
 Automated intake, classification, and routing reduced manual triage and shortened time-to-first-decision for new opportunities.
@@ -103,11 +103,11 @@ What previously required multi-day cross-functional compilation was reduced to a
 • 3x faster due diligence process
 Standardized checklists, centralized issue tracking, and automated document workflows accelerated pre-close execution and reduced coordination overhead.
 
-Beyond the headline metrics, Northgate reported improved forecasting confidence, better alignment between investment and operations teams, and a stronger ability to compete for attractive deals through faster response and tighter process control.
+Beyond the headline metrics, the firm reported improved forecasting confidence, better alignment between investment and operations teams, and a stronger ability to compete for attractive deals through faster response and tighter process control.
 
 6) Client Quote
-“Chohan helped us modernize the operating backbone of the firm without disrupting how we invest. We now evaluate opportunities faster, monitor portfolio performance in real time, and produce LP reporting with a level of speed and consistency we simply didn’t have before. The impact was immediate and measurable.”
-— Managing Director, Northgate Capital Partners`,
+"Chohan helped us modernize the operating backbone of the firm without disrupting how we invest. We now evaluate opportunities faster, monitor portfolio performance in real time, and produce LP reporting with a level of speed and consistency we simply didn't have before. The impact was immediate and measurable."
+- Managing Director, Private Equity Firm`,
   },
   {
     title: "Party Bookings +48%",
@@ -127,15 +127,15 @@ Beyond the headline metrics, Northgate reported improved forecasting confidence,
     ],
     content: `Party bookings are high-intent leads. They're also easy to lose.
 
-This client had plenty of demand, but requests were scattered across voicemail, inboxes, and staff handoffs. A lead would come in, someone wouldn't see it until later, and by then the customer had already moved on. Not a marketing problem—a process problem.
+This client had plenty of demand, but requests were scattered across voicemail, inboxes, and staff handoffs. A lead would come in, someone wouldn't see it until later, and by then the customer had already moved on. Not a marketing problem-a process problem.
 
 We treated it like a pipeline: capture → qualify → quote → confirm. Step one was intake. We rebuilt the form and messaging so every request produced a clean record with the basics: date, headcount, package preference, contact details, and any special notes. No more guessing.
 
 Next came quoting. Pricing wasn't the issue; inconsistency was. We created a quote workflow that generated clear, consistent packages and terms. That immediately cut down on "What's included?" and "Can we do X?" loops.
 
-Then we added lightweight automation to keep momentum. Every lead got an immediate acknowledgement, a clear next step, and a short follow-up cadence if they went quiet. Nothing spammy—just a safety net so good leads didn't die from accidental silence.
+Then we added lightweight automation to keep momentum. Every lead got an immediate acknowledgement, a clear next step, and a short follow-up cadence if they went quiet. Nothing spammy-just a safety net so good leads didn't die from accidental silence.
 
-Within 30 days, bookings were up 48%. The biggest lever was speed: respond while intent is hot. The second lever was clarity: fewer questions means faster decisions. Staff stress dropped too—fewer tabs, fewer missed details, and a repeatable process.
+Within 30 days, bookings were up 48%. The biggest lever was speed: respond while intent is hot. The second lever was clarity: fewer questions means faster decisions. Staff stress dropped too-fewer tabs, fewer missed details, and a repeatable process.
 
 If you're selling time-sensitive services, the win usually isn't a new ad campaign. It's making it frictionless to say yes.`,
   },
@@ -158,7 +158,7 @@ If you're selling time-sensitive services, the win usually isn't a new ad campai
     ],
     content: `Invoice work is a quiet tax. It doesn't show up as a big line item, but it eats hours and introduces errors that shouldn't happen.
 
-In this engagement, invoices were being manually keyed in, matched to POs, and pushed around for approvals. The biggest delays weren't even the hard cases—they were the routine ones slowed down by missing fields and inconsistent formats.
+In this engagement, invoices were being manually keyed in, matched to POs, and pushed around for approvals. The biggest delays weren't even the hard cases-they were the routine ones slowed down by missing fields and inconsistent formats.
 
 We started by mapping the full flow: where invoices arrive, who touches them, what needs to be checked, and what "done" means. Then we built an automation layer that sat on top of the existing process. No rip-and-replace.
 
@@ -191,21 +191,21 @@ Good automation isn't "AI everywhere." It's reliable extraction, clear rules, an
       "Automated checklists and asset collection",
       "Clear timelines and responsibilities",
     ],
-    content: `Onboarding is where trust gets built—or lost.
+    content: `Onboarding is where trust gets built-or lost.
 
 This client had strong sales, but delivery teams were starting every project with the same chaos: missing access, incomplete assets, unclear timelines, and a lot of "Hey, can you send that again?" The result was slower time-to-value and more frustration than necessary.
 
-We treated onboarding like a product. First, we defined the minimum successful start—the exact inputs needed to begin confidently. Then we created a structured intake that gathered those inputs up front: goals, constraints, stakeholders, access, brand assets, and timeline.
+We treated onboarding like a product. First, we defined the minimum successful start-the exact inputs needed to begin confidently. Then we created a structured intake that gathered those inputs up front: goals, constraints, stakeholders, access, brand assets, and timeline.
 
 Next, we built a single onboarding dashboard that answered two questions instantly: Where is this client in the process? What's blocking progress? Each stage had a checklist with clear owners and due dates.
 
-Automation handled the repetitive parts: welcome message, access requests, reminders, and confirmations when key files arrived. When something was missing, the system didn't just nudge—it spelled out what was needed and why it mattered.
+Automation handled the repetitive parts: welcome message, access requests, reminders, and confirmations when key files arrived. When something was missing, the system didn't just nudge-it spelled out what was needed and why it mattered.
 
 We also improved handoffs from sales to delivery. Notes were standardized so delivery didn't restart discovery from zero. Clients got a simple roadmap and a consistent cadence of updates.
 
 The win wasn't just speed. Less ambiguity means lower churn risk. Clients felt guided instead of managed, and teams had a calmer, repeatable start for every engagement.
 
-If onboarding feels like a scramble, it's not a communication problem. It's a systems problem—and systems can be fixed.`,
+If onboarding feels like a scramble, it's not a communication problem. It's a systems problem-and systems can be fixed.`,
   },
   {
     title: "CRM Pipeline",
@@ -226,13 +226,13 @@ If onboarding feels like a scramble, it's not a communication problem. It's a sy
     ],
     content: `A lot of CRMs fail for the same reason: the stages don't mean anything.
 
-If "Qualified" means five different things depending on who you ask, your dashboards become noise and forecasting becomes guesswork. That's where this client was—weekly meetings were basically status theater.
+If "Qualified" means five different things depending on who you ask, your dashboards become noise and forecasting becomes guesswork. That's where this client was-weekly meetings were basically status theater.
 
 We started by aligning on the actual sales motion. What are the real steps from first contact to closed won? Where do deals stall? What information must exist before a deal progresses? We defined stages with clear exit criteria and baked that into the workflow.
 
 Then we reduced friction for reps. Instead of asking for long notes, we used structured fields that capture the essentials: decision-maker, timeline, budget signal, and next action. The CRM started prompting the right next step depending on the stage.
 
-Automation was used carefully—not to nag, but to prevent forgetfulness. Stale deals triggered reminders. Missing data got flagged. If a deal sat too long without movement, it got surfaced.
+Automation was used carefully-not to nag, but to prevent forgetfulness. Stale deals triggered reminders. Missing data got flagged. If a deal sat too long without movement, it got surfaced.
 
 Leadership gained visibility through dashboards that finally matched the new stage definitions. We also created a pipeline hygiene view: what's missing, what's overdue, and what's at risk. That shifted meetings away from "reporting" and toward actual problem solving.
 
@@ -246,7 +246,7 @@ A CRM should be a control panel for revenue ops. If it feels like homework, the 
     date: "2025-11-28",
     category: "Article",
     summary:
-      "A practical way to estimate automation ROI so you can prioritize projects that pay back quickly—without hand-wavy math or flashy demos.",
+      "A practical way to estimate automation ROI so you can prioritize projects that pay back quickly-without hand-wavy math or flashy demos.",
     coverLabel: "Strategy",
     readTimeMinutes: 6,
     heroImageUrl:
@@ -261,7 +261,7 @@ A CRM should be a control panel for revenue ops. If it feels like homework, the 
 
 The cleanest way to think about it is simple: you're investing in a process. So start with the baseline. How often does the process happen? How long does it take? Who does it? Time savings are the easiest to measure, but they're not the whole story.
 
-Look at quality too. If a process produces errors—wrong invoices, wrong data, missed follow-ups—that rework cost is real. Cycle time matters as well. If automation gets you paid faster or reduces churn, the impact compounds.
+Look at quality too. If a process produces errors-wrong invoices, wrong data, missed follow-ups-that rework cost is real. Cycle time matters as well. If automation gets you paid faster or reduces churn, the impact compounds.
 
 Next, split costs into two buckets.
 
@@ -273,9 +273,9 @@ A simple model usually works:
 1) Annual time saved = time saved per run × runs per year
 2) Annual labor value = annual time saved × blended hourly rate
 3) Quality value = avoided errors + avoided churn + faster cash collection
-4) Net ROI = (annual value − annual operating cost) ÷ build cost
+4) Net ROI = (annual value - annual operating cost) ÷ build cost
 
-Finally, prioritize projects with fast payback and low complexity. The best early wins are repetitive, rule-heavy tasks with high volume—and clear definitions of "done."
+Finally, prioritize projects with fast payback and low complexity. The best early wins are repetitive, rule-heavy tasks with high volume-and clear definitions of "done."
 
 Automation isn't a vanity project. When you measure it properly, it's one of the most reliable ways to increase capacity without increasing headcount.`,
   },
@@ -285,7 +285,7 @@ Automation isn't a vanity project. When you measure it properly, it's one of the
     date: "2025-11-15",
     category: "Article",
     summary:
-      "Most AI projects don't fail because the model is bad. They fail because the system around it is missing—workflow, data readiness, adoption, and ownership.",
+      "Most AI projects don't fail because the model is bad. They fail because the system around it is missing-workflow, data readiness, adoption, and ownership.",
     coverLabel: "Execution",
     readTimeMinutes: 6,
     heroImageUrl:
@@ -298,7 +298,7 @@ Automation isn't a vanity project. When you measure it properly, it's one of the
     ],
     content: `AI projects rarely fail because the model is "bad." Most of the time, the model is fine. What's missing is everything around it.
 
-The biggest failure mode is starting with a flashy demo instead of a measurable workflow. If you can't define success in one sentence with a metric—reduce handle time, increase conversion, improve accuracy—the project will drift.
+The biggest failure mode is starting with a flashy demo instead of a measurable workflow. If you can't define success in one sentence with a metric-reduce handle time, increase conversion, improve accuracy-the project will drift.
 
 The second issue is data readiness. Teams assume their data is usable, then discover it's inconsistent, incomplete, or scattered across tools. AI amplifies whatever you feed it. Messy inputs create messy outputs, and suddenly everyone blames the model.
 
@@ -329,7 +329,7 @@ The good news is these failures are avoidable. Start with a workflow, measure im
     ],
     content: `Support volume was growing faster than this SaaS company's team could handle. As the product expanded, so did the number and complexity of incoming questions. Tickets piled up in shared queues, first responses lagged by hours, and urgent issues often got buried behind low-priority requests. Customers felt the delay, and CSAT started trending in the wrong direction.
 
-The core problem wasn't effort—it was system design. Agents were spending too much time on repetitive questions, manually triaging tickets, and hunting for answers across scattered documentation. The team needed speed without sacrificing quality.
+The core problem wasn't effort-it was system design. Agents were spending too much time on repetitive questions, manually triaging tickets, and hunting for answers across scattered documentation. The team needed speed without sacrificing quality.
 
 We rebuilt support operations around three layers: AI chatbots, intelligent routing, and knowledge-base integration.
 
@@ -341,7 +341,7 @@ Third, we connected the support workflow to a curated knowledge base. The AI use
 
 Within six weeks, average first-response time dropped by 70%, moving from hours to minutes. Resolution speed improved, backlog pressure eased, and CSAT rose as customers received faster, clearer support. Just as important, agents had more capacity for complex cases that required human judgment.
 
-Key lessons: automation works best when paired with clean knowledge sources, clear routing logic, and human escalation paths. AI shouldn't replace support teams—it should remove repetitive friction so teams can focus on high-value customer outcomes.`,
+Key lessons: automation works best when paired with clean knowledge sources, clear routing logic, and human escalation paths. AI shouldn't replace support teams-it should remove repetitive friction so teams can focus on high-value customer outcomes.`,
   },
 ];
 
