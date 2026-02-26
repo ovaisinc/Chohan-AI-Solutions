@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
     author: "Chohan AI Editorial",
     category: "AI Strategy",
     excerpt: "OpenAI's $200M Snowflake partnership and Big Four consulting alliances signal a fundamental shift in enterprise AI. With 80% of Fortune 500 now deploying AI agents, the competitive advantage has moved from model access to integration architecture and governance.",
-    heroImage: "/blog-openai-frontier-hero.svg",
+    heroImage: "/blog-openai-frontier-ai.png",
     readTime: 8,
     tags: [
       "OpenAI",
